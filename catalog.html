@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VANTAGE AUDIO - Catalogue de Produits</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-secondary-container": "#b4b5b5", "surface-container-lowest": "#0e0e0e", "surface-container": "#1f1f1f", "tertiary-fixed": "#e5e2e1", "on-primary-container": "#5a0022", "surface-container-high": "#2a2a2a", "on-secondary-fixed": "#1a1c1c", "surface-bright": "#393939", "tertiary-container": "#929090", primary: "#ffb2bf", "on-surface-variant": "#e6bcc2", "secondary-fixed-dim": "#c6c6c7", "on-error-container": "#ffdad6", "surface-variant": "#353535", "on-error": "#690005", "inverse-on-surface": "#303030", surface: "#131313", "on-surface": "#e2e2e2", "error-container": "#93000a", "surface-container-low": "#1b1b1b", outline: "#ac878d", "on-tertiary-fixed-variant": "#474746", background: "#131313", "on-primary": "#660028", "inverse-primary": "#bc004f", tertiary: "#c8c6c5", error: "#ffb4ab", secondary: "#c6c6c7", "on-secondary": "#2f3131", "on-tertiary-fixed": "#1c1b1b", "on-primary-fixed-variant": "#90003b", "secondary-container": "#454747", "primary-container": "#ff4d80", "surface-tint": "#ffb2bf", "secondary-fixed": "#e2e2e2", "on-secondary-fixed-variant": "#454747", "surface-dim": "#131313", "on-tertiary-container": "#2a2a2a", "tertiary-fixed-dim": "#c8c6c5", "outline-variant": "#5d3f44", "on-background": "#e2e2e2", "surface-container-highest": "#353535", "inverse-surface": "#e2e2e2", "on-primary-fixed": "#3f0016", "primary-fixed": "#ffd9de", "primary-fixed-dim": "#ffb2bf", "on-tertiary": "#313030"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"container-max": "1280px", "stack-sm": "12px", "margin-mobile": "16px", gutter: "24px", "margin-desktop": "40px", "stack-lg": "48px", base: "8px", "stack-md": "24px"}, fontFamily: {"headline-xl": ["Manrope"], "label-caps": ["Inter"], "headline-md": ["Manrope"], "body-md": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Manrope"], "label-md": ["Inter"], headline: ["Manrope"], display: ["Manrope"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-caps": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}]}}}};</script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353535;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #454747;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full border-b border-white/10 bg-surface dark:bg-surface sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-gutter">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight" href="index.html">RENTSOUNDSYSTEM</a>
+<!-- Search Bar (on_left as per JSON) -->
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-2 border border-white/10 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-2 text-[20px]" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant w-64" placeholder="Rechercher du matériel..." type="text"/>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-stack-md">
+<a class="font-body-md text-body-md text-primary dark:text-primary font-bold border-b-2 border-primary pb-1" href="catalog.html">Louer du Matériel</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="dashboard-partner.html">Devenir Partenaire</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-stack-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 p-2 relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<a class="ml-4 font-label-md text-label-md bg-surface-container border border-white/10 hover:border-primary text-on-surface px-4 py-2 rounded-full transition-colors flex items-center gap-2" href="dashboard-client.html">
+<img alt="User profile" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzE5DHPl_SAwOWQLqIRhZaqIBQlKa_ngRiA6q_bduTEWRZgIwNppDVtn7pM4Ga8oz4j8-KGhGTE6Bo6G3JpdmveluRFaJinKGj8RsK-WseriOgOghjHZuzbVHhf3M6mw_8Jbvee-4mhF_Re5HHhoGQx58OcIsOz8ASm_j19XrGjzw_MRJLO-m7eiTVn8vcAWbJS4L5-bEmRTgGu-RvjjipUlo4FD9Zjp9u5nvLbVG38x1lMXBUmIVusrCa7pLHklEsR-Iy1Jd7xCM"/>
+                    Mon Compte
+                </a>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row w-full max-w-container-max mx-auto pt-stack-lg pb-stack-lg gap-gutter px-margin-mobile md:px-margin-desktop">
+<!-- Filters Sidebar -->
+<aside class="w-full md:w-64 flex-shrink-0 space-y-stack-md">
+<div class="bg-surface-container rounded-xl p-stack-md border border-white/10">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Filtres</h2>
+<!-- Category Filter -->
+<div class="mb-stack-sm border-b border-white/10 pb-stack-sm">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase tracking-widest">Catégorie</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Haut-parleurs &amp; Moniteurs</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Tables de Mixage &amp; Consoles</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Microphones</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Amplificateurs</span>
+</label>
+</div>
+</div>
+<!-- Price Filter -->
+<div class="mb-stack-sm border-b border-white/10 pb-stack-sm">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase tracking-widest">Tarif Journalier</h3>
+<div class="flex items-center gap-2">
+<input class="w-full bg-surface border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-body-sm px-2 py-1 placeholder:text-on-surface-variant" placeholder="Min" type="number"/>
+<span class="text-on-surface-variant">-</span>
+<input class="w-full bg-surface border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-body-sm px-2 py-1 placeholder:text-on-surface-variant" placeholder="Max" type="number"/>
+</div>
+</div>
+<!-- Location Filter -->
+<div class="mb-stack-sm border-b border-white/10 pb-stack-sm">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase tracking-widest">Lieu</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" data-icon="location_on">location_on</span>
+<select class="w-full bg-surface border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-body-sm pl-8 pr-2 py-2 appearance-none text-on-surface">
+<option>Los Angeles, CA</option>
+<option>New York, NY</option>
+<option>Las Vegas, NV</option>
+<option>Miami, FL</option>
+</select>
+</div>
+</div>
+<!-- Dates Filter -->
+<div class="mb-stack-sm">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase tracking-widest">Dates de Location</h3>
+<div class="space-y-2">
+<input class="w-full bg-surface border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-body-sm px-3 py-2 text-on-surface" placeholder="Retrait" type="date"/>
+<input class="w-full bg-surface border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-body-sm px-3 py-2 text-on-surface" placeholder="Retour" type="date"/>
+</div>
+</div>
+<button class="w-full bg-surface-bright hover:bg-surface-variant text-on-surface font-label-md text-label-md py-2 rounded transition-colors border border-white/5">
+                    Effacer les Filtres
+                </button>
+</div>
+</aside>
+<!-- Product Grid Catalog -->
+<section class="flex-grow">
+<div class="flex justify-between items-end mb-stack-md">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Catalogue de Matériel</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Affichage de 124 articles à Los Angeles, CA</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Trier par:</span>
+<select class="bg-surface-container border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-body-sm px-3 py-1 appearance-none text-on-surface">
+<option>Recommandé</option>
+<option>Prix: Croissant</option>
+<option>Prix: Décroissant</option>
+<option>Mieux Noté</option>
+</select>
+</div>
+</div>
+<!-- Header Image Banner -->
+<div class="w-full h-48 md:h-64 mb-stack-lg rounded-xl overflow-hidden relative border border-white/10 group">
+<img alt="Hero image showing professional audio equipment setup" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A wide shot of a massive professional audio setup on a dark, minimalist concert stage before a show. Towering line array speakers flank a complex mixing console in the foreground. The lighting is low and moody, dominated by deep pitch blacks and sharp, vivid pink accent lights slicing through a subtle atmospheric haze. The aesthetic is highly technical, clinical, and premium, reflecting a high-end corporate event production environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr5mylJdg_7eBxu0Tq2C8UNJcJJRvFqrOlsV_C62oe9at4xL5FrteqRSOV24h7lMs1ITFbmcjritXmXmCk0_kkunYfuwS2S9qGUVqjhOk0zmXRpgINnThKpskkR17Fzk5cbxA5kl5_p_CIHnBvsPqDLQ6OlcMzOsIiELQDDErgJ7oeSyFkYsVD4t0QaC3sW6BfKNaAf3mouN9YNLCCJKSuy9EgD-xJ5FXv8M3l5aOr9-tbNEXa7YqIxUgfahYQWyYhHgd_NRpP8bo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+<div class="absolute bottom-stack-md left-stack-md">
+<span class="bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 rounded mb-2 inline-block">Configuration Vedette</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Système L-Acoustics K2</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Système line array complet prêt pour les arènes, disponible pour un déploiement immédiat.</p>
+</div>
+</div>
+<!-- Bento Grid / Asymmetric Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<article onclick="if(!event.target.closest('button')&&!event.target.closest('a'))window.location.href='product.html'" style="cursor:pointer" class="bg-surface-container border border-white/5 hover:border-primary/50 rounded-xl overflow-hidden group flex flex-col transition-all duration-300 relative">
+<div class="absolute top-3 left-3 z-10 flex gap-2">
+<span class="bg-surface-highest/80 backdrop-blur text-on-surface font-label-caps text-label-caps px-2 py-1 rounded border border-white/10">Line Array</span>
+</div>
+<div class="absolute top-3 right-3 z-10">
+<button class="text-on-surface-variant hover:text-primary transition-colors bg-surface-highest/80 backdrop-blur p-1.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<div class="h-48 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-lowest to-transparent z-0"></div>
+<img alt="L-Acoustics K2 Speaker" class="w-full h-full object-contain p-4 z-10 relative group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, studio-style product shot of a single L-Acoustics K2 line array speaker element. The speaker is matte black, heavily textured, and utilitarian in design. It is set against an infinite pitch-black background with subtle, clinical top-down lighting that highlights its rugged edges and technical details. A faint, vivid pink rim light softly catches the left side of the cabinet, emphasizing its premium, professional-grade quality in a high-stakes event context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcsNZHKeljXRvEy_PuXgRiQH1KyEl4fYI20OkCt5Qy_QKRDRr3RNk9D50L2Vdez1q8lURPHiJPEp9_pWkJ1uhrnKFHEjX0oDsxCe8KEfIuZkP3cfdlwEFvFdinrUjWFqxcusK91hGZmghBCY-c2F-bp-khaac0nuJqhJoyR-LQ3tdGvS0CubnnjOxnDS-kBPDGbOC1b9ETJrTo-GV2wTWcPJHb_2dBYSl1dTOBSsWQnCDm7wkl-v1P45gBsGgCEd7-qD4VO_33u74"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface">L-Acoustics K2</h3>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Disponible</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Source ligne WST à courbure variable. Parfait pour les applications longue portée.</p>
+<div class="flex items-center gap-4 mb-4 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> LA Hub</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span> 24 Unités</div>
+</div>
+<div class="flex justify-between items-center border-t border-white/10 pt-4 mt-auto">
+<div>
+<span class="font-headline-md text-headline-md text-primary">$450</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/jour</span>
+</div>
+<a href="product.html" class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded hover:bg-primary-fixed transition-colors font-bold">Louer Maintenant</a>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article onclick="if(!event.target.closest('button')&&!event.target.closest('a'))window.location.href='product.html'" style="cursor:pointer" class="bg-surface-container border border-white/5 hover:border-primary/50 rounded-xl overflow-hidden group flex flex-col transition-all duration-300 relative">
+<div class="absolute top-3 left-3 z-10 flex gap-2">
+<span class="bg-surface-highest/80 backdrop-blur text-on-surface font-label-caps text-label-caps px-2 py-1 rounded border border-white/10">Console</span>
+</div>
+<div class="h-48 bg-surface-container-lowest relative overflow-hidden">
+<img alt="Pioneer DJM-V10 Mixer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A top-down, highly detailed view of a professional Pioneer audio mixing console. The console is dark metallic gray with hundreds of glowing buttons, knobs, and faders. The setting is a darkened production booth. The illumination comes primarily from the console's own built-in LED screens and button backlights, creating a highly technical, nocturnal vibe. A sharp pink glow subtly reflects off the metallic surface from an unseen monitor, reinforcing the premium corporate-minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6txkrvrF0AAgaYAa5o1LVtFBkDwaWOt4IVO3FZcg7FoFzXiMRWGwn4V6QC-Ak2KtAnLrWpu5eiEQ38zAk7_AkdsTH7Y9C_q9wfPHGbtRiHKs1M2wA6sXvY81DP78mR_eDMKW30MLV9Kx1EAC60gADd2Gsxw1vMQ46kNHyOq_3BMJJiMUplD5AQbJfN6yKPGh_eCUtJAHXcCl_qDwUsNsBV3xOVJnfEZ_Ak6nB-3ejkDa7dNDo2aX4PDDy4d_BO98hxiq5tddwrZ0"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface">Pioneer DJM-V10</h3>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Réservé</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Table de mixage DJ professionnelle 6 canaux avec égaliseur 4 bandes et routage étendu.</p>
+<div class="flex justify-between items-center border-t border-white/10 pt-4 mt-auto opacity-50">
+<div>
+<span class="font-headline-md text-headline-md text-on-surface">$185</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/jour</span>
+</div>
+<button class="border border-white/20 text-on-surface font-label-md text-label-md px-4 py-2 rounded cursor-not-allowed">Liste d'attente</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article onclick="if(!event.target.closest('button')&&!event.target.closest('a'))window.location.href='product.html'" style="cursor:pointer" class="bg-surface-container border border-white/5 hover:border-primary/50 rounded-xl overflow-hidden group flex flex-col transition-all duration-300 relative">
+<div class="absolute top-3 left-3 z-10 flex gap-2">
+<span class="bg-surface-highest/80 backdrop-blur text-on-surface font-label-caps text-label-caps px-2 py-1 rounded border border-white/10">Subwoofer</span>
+</div>
+<div class="h-48 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-lowest to-transparent z-0"></div>
+<img alt="L-Acoustics KS28 Subwoofer" class="w-full h-full object-contain p-4 z-10 relative group-hover:scale-105 transition-transform duration-500" data-alt="A low-angle, imposing studio shot of a massive dual 18-inch professional subwoofer cabinet. The cabinet is constructed of rugged, dark matte wood with a heavy steel grille protecting the drivers. It sits on a pure black reflective floor. The lighting is sparse and dramatic, with a stark white spotlight hitting the top edge and a deep, vivid pink ambient wash spilling across the floor, highlighting the raw power and clinical precision of the audio equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSI8FOjjYHQvY7rA4k8WxW4Aj6RHlWvVegoXpxvKK2qcBOJbmSc6Y52M5-jF-iuqNZhyuSg99Re9WsPb7ScaVEZ-jxYS2_t9wOLVTl2fh1ti8eO5XdOyyat2qrCMaLNBIMCJuIlehCQJAQaH9_OBIyirjQcpJsu0hl3QmtEHLcNvZMY2YFgp2lnm3JBD166bRxDETpqTfgGkNyRY-YE8Oghfp7pmAr8XVfl-Kdacgd0fpHa7CJwuB0ii7bfc_9BJRLrhgsXsTEQZo"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface">L-Acoustics KS28</h3>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Disponible</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Subwoofer de référence. Bande passante étendue jusqu'à 25 Hz.</p>
+<div class="flex items-center gap-4 mb-4 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> LA Hub</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span> 12 Unités</div>
+</div>
+<div class="flex justify-between items-center border-t border-white/10 pt-4 mt-auto">
+<div>
+<span class="font-headline-md text-headline-md text-primary">$350</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/jour</span>
+</div>
+<a href="product.html" class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded hover:bg-primary-fixed transition-colors font-bold">Louer Maintenant</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 mt-stack-lg pt-stack-md border-t border-white/10">
+<button class="p-2 border border-white/10 rounded hover:border-primary text-on-surface-variant hover:text-primary transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded font-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-white/10 text-on-surface rounded font-label-md hover:border-primary transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-white/10 text-on-surface rounded font-label-md hover:border-primary transition-colors">3</button>
+<span class="text-on-surface-variant px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center border border-white/10 text-on-surface rounded font-label-md hover:border-primary transition-colors">12</button>
+<button class="p-2 border border-white/10 rounded hover:border-primary text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md border-t border-white/5 bg-surface-container-lowest">
+<div class="font-headline-sm text-headline-sm text-on-surface">
+            VANTAGE AUDIO
+        </div>
+<div class="flex gap-stack-md font-body-sm text-body-sm">
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">Conditions d'Utilisation</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">Politique de Confidentialité</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">Sites Mondiaux</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-secondary-container">
+            © 2024 Vantage Audio Marketplace. Logistique Sonore Professionnelle.
+        </div>
+</footer>
+</body></html>

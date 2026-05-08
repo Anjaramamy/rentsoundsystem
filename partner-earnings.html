@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestion des Gains - Vantage Audio</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "on-secondary-container": "#b4b5b5",
+                      "secondary": "#c6c6c7",
+                      "surface-tint": "#ffb2bf",
+                      "primary": "#ffb2bf",
+                      "outline-variant": "#5d3f44",
+                      "surface-bright": "#393939",
+                      "on-surface": "#e2e2e2",
+                      "tertiary-fixed": "#e5e2e1",
+                      "tertiary": "#c8c6c5",
+                      "surface-container-highest": "#353535",
+                      "on-background": "#e2e2e2",
+                      "surface-container-low": "#1b1b1b",
+                      "on-primary-fixed-variant": "#90003b",
+                      "primary-fixed-dim": "#ffb2bf",
+                      "error": "#ffb4ab",
+                      "on-secondary": "#2f3131",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "surface-container": "#1f1f1f",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-primary": "#660028",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "primary-container": "#ff4d80",
+                      "on-tertiary": "#313030",
+                      "surface": "#131313",
+                      "on-tertiary-container": "#2a2a2a",
+                      "tertiary-container": "#929090",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-container-lowest": "#0e0e0e",
+                      "inverse-on-surface": "#303030",
+                      "on-primary-fixed": "#3f0016",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-primary-container": "#5a0022",
+                      "surface-dim": "#131313",
+                      "secondary-container": "#454747",
+                      "on-error-container": "#ffdad6",
+                      "surface-variant": "#353535",
+                      "outline": "#ac878d",
+                      "inverse-surface": "#e2e2e2",
+                      "background": "#131313",
+                      "inverse-primary": "#bc004f",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-error": "#690005",
+                      "primary-fixed": "#ffd9de",
+                      "on-surface-variant": "#e6bcc2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope", "sans-serif"],
+                      "body": ["Inter", "sans-serif"],
+                      "label": ["Inter", "sans-serif"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Component (Generated from JSON) -->
+<nav class="hidden md:flex flex-col bg-surface-container border-r border-white/5 h-screen w-64 fixed left-0 top-0 p-stack-sm z-40">
+<div class="flex items-center gap-3 mb-stack-lg px-2 pt-2">
+<div class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant bg-surface-variant flex-shrink-0">
+<img alt="Partner profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujoF2Ba4o6_PrN0k1SDnwKc8pvHg8nP00XQ9H4Qhjh7Ih2Th5VLOF7diMJenu09w0B-GqDqfaIZ6Xk8mUIKRauHSeU6X5rVoEDFgfNQIbDskV1idxB_-p0DvTZ6aEgQZmcn2mCvV7in7RFh3VEabyK08MmFnLjQNeNBCZ9-ucKFrYArt0LigPsK7MeV2b2dxdE4McgE0POgKDD9S_bI6lc75Gx-Lz595eE8QvfT2y6AinORulZ_4ubJ72n2Tv7AzuX8kz2ztxR7"/>
+</div>
+<div>
+<h2 class="font-headline text-headline-md text-primary tracking-tight leading-tight">Partner Portal</h2>
+<p class="font-label text-label-md text-on-surface-variant">RENTSOUNDSYSTEM</p>
+</div>
+</div>
+<ul class="flex flex-col gap-2 flex-1">
+<!-- Dashboard (Inactive) -->
+<li class="">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 font-label text-label-md transition-all duration-150" href="dashboard-partner.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="">Dashboard</span>
+</a>
+</li>
+<!-- Inventory (Inactive) -->
+<li class="">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 font-label text-label-md transition-all duration-150" href="catalog.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="">Inventory</span>
+</a>
+</li>
+<!-- Earnings (ACTIVE) -->
+<li class="">
+<a class="flex items-center gap-3 bg-primary text-on-primary rounded-xl px-4 py-3 font-label text-label-md scale-95 duration-150" href="partner-earnings.html">
+<span class="material-symbols-outlined fill" data-icon="payments" data-weight="fill">payments</span>
+<span class="font-semibold">Earnings</span>
+</a>
+</li>
+<!-- Bookings (Inactive) -->
+<li class="">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 font-label text-label-md transition-all duration-150" href="partner-bookings.html">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="">Bookings</span>
+</a>
+</li>
+<!-- Settings (Inactive) -->
+<li class="">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 font-label text-label-md transition-all duration-150 mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-stack-md">
+<button class="w-full flex items-center justify-center gap-2 bg-surface-variant hover:bg-surface-container-highest text-on-surface font-label text-label-md rounded-xl py-3 border border-outline-variant/30 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                Add Equipment
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 p-margin-mobile md:p-margin-desktop w-full max-w-container-max mx-auto">
+<!-- Header -->
+<header class="flex flex-col md:flex-row md:items-center justify-between mb-stack-lg gap-4">
+<div>
+<h1 class="font-headline text-headline-xl text-inverse-surface">Gestion des Gains</h1>
+<p class="font-body text-body-md text-tertiary mt-2">Suivez vos revenus, vos paiements et l'historique de vos transactions.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 bg-surface-container-low border border-outline-variant/50 text-on-surface hover:border-outline px-4 py-2 rounded transition-colors font-label text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                    Exporter
+                </button>
+<button class="bg-primary text-on-primary font-label text-label-md font-semibold px-6 py-2 rounded hover:bg-primary-fixed transition-colors">
+                    Demander un Retrait
+                </button>
+</div>
+</header>
+<!-- Summary Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-stack-lg">
+<!-- Total Earnings -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-stack-md flex flex-col relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center justify-between mb-4 relative z-10">
+<h3 class="font-label text-label-caps uppercase text-on-surface-variant tracking-wider">Gains Totaux</h3>
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<p class="font-headline text-[40px] font-bold text-inverse-surface leading-none relative z-10 mb-2">€42,850.00</p>
+<div class="flex items-center gap-1 text-tertiary font-label text-label-md relative z-10">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="trending_up">trending_up</span>
+<span class="text-primary">+12.5%</span> depuis le mois dernier
+                </div>
+</div>
+<!-- Pending Payouts -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-stack-md flex flex-col relative overflow-hidden">
+<div class="flex items-center justify-between mb-4 relative z-10">
+<h3 class="font-label text-label-caps uppercase text-on-surface-variant tracking-wider">Paiements en Attente</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<p class="font-headline text-[40px] font-bold text-inverse-surface leading-none relative z-10 mb-2">€3,240.50</p>
+<div class="flex items-center gap-2 text-tertiary font-label text-label-md relative z-10">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    Traitement prévu le 15 Nov
+                </div>
+</div>
+<!-- Available for Withdrawal (Highlighted with Image Background) -->
+<div class="relative rounded-xl p-stack-md flex flex-col overflow-hidden border border-primary/40 shadow-[0_0_15px_rgba(255,178,191,0.1)]">
+<!-- Faint background image using provided placeholder -->
+<div class="absolute inset-0 z-0 opacity-20 mix-blend-luminosity bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida/ADBb0uithrV_72yw_-gNmXsm9rSwf1llKqAgPRBmjaDmK2m3vopq66UBEyPHV9Keg_eB1Fsxp7O4PRjgtme-azAXa1KOtnPKmIFgWIgWy95-8cD9NJzXVWUyrDscokoxfHRt-k1efWLs7pf0vqr46W81FVvS2p1Za1RyDTmQBSzOVD5jCvj5KrPqqlp38FkqNJxyUl5hbkvZaIlMV2orXqEexWzJnA_AfgxRw9riVFxRgykzQDzfPjpxJK_yufaR8JrRApcG-R4sA2amSA");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-surface-container/80 z-0"></div>
+<div class="flex items-center justify-between mb-4 relative z-10">
+<h3 class="font-label text-label-caps uppercase text-primary tracking-wider font-semibold">Disponible pour Retrait</h3>
+<span class="material-symbols-outlined text-primary fill" data-icon="task_alt">task_alt</span>
+</div>
+<p class="font-headline text-[40px] font-bold text-primary leading-none relative z-10 mb-2">€8,450.00</p>
+<div class="mt-auto relative z-10 pt-4">
+<p class="font-label text-label-md text-on-surface-variant mb-3">Fonds libérés des locations terminées.</p>
+</div>
+</div>
+</section>
+<!-- Complex Layout Section: Chart & Promo -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-stack-lg">
+<!-- Revenue Chart (Spans 2 columns) -->
+<div class="lg:col-span-2 bg-surface-container border border-outline-variant/30 rounded-xl p-stack-md flex flex-col">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-headline-md text-inverse-surface">Tendances des Revenus</h3>
+<select class="bg-surface-container-low border border-outline-variant/50 text-on-surface font-label text-label-md rounded px-3 py-1.5 focus:border-primary focus:ring-0">
+<option>Année 2024</option>
+<option>6 Derniers Mois</option>
+</select>
+</div>
+<!-- CSS Bar Chart -->
+<div class="flex-1 flex items-end gap-2 md:gap-4 h-[250px] mt-auto relative border-b border-outline-variant/30 pb-2">
+<!-- Y-Axis Labels (Absolute positioned for simplicity in this demo) -->
+<div class="absolute left-0 top-0 bottom-2 w-8 flex flex-col justify-between text-tertiary font-label text-[10px] items-end pr-2 border-r border-outline-variant/30">
+<span class="">10k</span>
+<span class="">7.5k</span>
+<span class="">5k</span>
+<span class="">2.5k</span>
+<span class="">0</span>
+</div>
+<!-- Chart Bars -->
+<div class="flex-1 flex items-end justify-between h-full pl-10">
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest group-hover:bg-primary/20 rounded-t transition-colors relative h-[30%]"></div>
+<span class="text-tertiary font-label text-[10px] uppercase">Jan</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest group-hover:bg-primary/20 rounded-t transition-colors relative h-[45%]"></div>
+<span class="text-tertiary font-label text-[10px] uppercase">Fév</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest group-hover:bg-primary/20 rounded-t transition-colors relative h-[35%]"></div>
+<span class="text-tertiary font-label text-[10px] uppercase">Mar</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full max-w-[40px] bg-primary rounded-t shadow-[0_0_10px_rgba(255,178,191,0.2)] relative h-[80%]"></div>
+<span class="text-primary font-label text-[10px] uppercase font-bold">Avr</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest group-hover:bg-primary/20 rounded-t transition-colors relative h-[60%]"></div>
+<span class="text-tertiary font-label text-[10px] uppercase">Mai</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest group-hover:bg-primary/20 rounded-t transition-colors relative h-[75%]"></div>
+<span class="text-tertiary font-label text-[10px] uppercase">Juin</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Insights / Promo Card -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col relative group">
+<div class="h-40 relative">
+<img alt="Equipement audio pro en action" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ujZiu7P0lKVrcryW24xnhaup4D0i90MsZNCXaH2RWtvB9DpIp-W3t80grU300o8xb_nYducxN0Ybx0Ff3br1IpgzDd2uIv2JaD-EaiB3YnwCpeZ8R3xVe1RPnBPkcQ48Sn3T4ZzpG2p6wyROl4lmYHj1NN4h7svvCfJIt61mjiod3P4roQSdMw7xcVcdvsgdqLQ27UR918MnW3Qkj4BOMzLmTN8JDgJSQy3a9Rkhllnk7mSsjqcbYnjvhgkyJGtxw1cdO1Nx3a8-Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-sm border border-outline-variant/50 px-2 py-1 rounded font-label text-[10px] uppercase tracking-wider text-on-surface">Astuce Pro</div>
+</div>
+<div class="p-stack-sm flex-1 flex flex-col">
+<h4 class="font-headline text-headline-md text-inverse-surface mb-2">Optimisez votre inventaire</h4>
+<p class="font-body text-body-sm text-tertiary mb-4 flex-1">Les systèmes Line Array sont actuellement en forte demande dans votre région. Ajoutez-en à votre inventaire pour maximiser vos gains cet été.</p>
+<button class="w-full border border-primary text-primary font-label text-label-md py-2 rounded hover:bg-primary/10 transition-colors">
+                        Voir l'analyse du marché
+                    </button>
+</div>
+</div>
+</section>
+<!-- Detailed Transaction Table -->
+<section class="mb-stack-lg">
+<h3 class="font-headline text-headline-lg text-inverse-surface mb-stack-sm">Détail des Transactions</h3>
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-surface-container-high border-b border-outline-variant/50">
+<th class="p-4 font-label text-label-caps text-on-surface-variant uppercase tracking-wider">Date</th>
+<th class="p-4 font-label text-label-caps text-on-surface-variant uppercase tracking-wider">ID Commande</th>
+<th class="p-4 font-label text-label-caps text-on-surface-variant uppercase tracking-wider">Équipement Loué</th>
+<th class="p-4 font-label text-label-caps text-on-surface-variant uppercase tracking-wider">Durée</th>
+<th class="p-4 font-label text-label-caps text-on-surface-variant uppercase tracking-wider text-right">Montant Brut</th>
+<th class="p-4 font-label text-label-caps text-on-surface-variant uppercase tracking-wider text-right">Frais (10%)</th>
+<th class="p-4 font-label text-label-caps text-primary uppercase tracking-wider text-right font-semibold">Gains Nets</th>
+</tr>
+</thead>
+<tbody class="font-body text-body-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-highest transition-colors">
+<td class="p-4 text-tertiary">24 Avr 2024</td>
+<td class="p-4 font-mono text-xs text-secondary">#ORD-9928A</td>
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-variant rounded border border-outline-variant/50 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="speaker">speaker</span>
+</div>
+<span class="font-medium text-inverse-surface">L-Acoustics K2 System</span>
+</td>
+<td class="p-4 text-tertiary">3 Jours</td>
+<td class="p-4 text-right">€2,400.00</td>
+<td class="p-4 text-right text-error-container">-€240.00</td>
+<td class="p-4 text-right text-primary font-semibold">€2,160.00</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/20 bg-surface-container-low hover:bg-surface-container-highest transition-colors">
+<td class="p-4 text-tertiary">21 Avr 2024</td>
+<td class="p-4 font-mono text-xs text-secondary">#ORD-9812C</td>
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-variant rounded border border-outline-variant/50 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="mic">mic</span>
+</div>
+<span class="font-medium text-inverse-surface">Shure Axient Digital Kit</span>
+</td>
+<td class="p-4 text-tertiary">1 Jour</td>
+<td class="p-4 text-right">€450.00</td>
+<td class="p-4 text-right text-error-container">-€45.00</td>
+<td class="p-4 text-right text-primary font-semibold">€405.00</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-highest transition-colors">
+<td class="p-4 text-tertiary">18 Avr 2024</td>
+<td class="p-4 font-mono text-xs text-secondary">#ORD-9755F</td>
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-variant rounded border border-outline-variant/50 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="album">album</span>
+</div>
+<span class="font-medium text-inverse-surface">Pioneer CDJ-3000 x2</span>
+</td>
+<td class="p-4 text-tertiary">2 Jours</td>
+<td class="p-4 text-right">€300.00</td>
+<td class="p-4 text-right text-error-container">-€30.00</td>
+<td class="p-4 text-right text-primary font-semibold">€270.00</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-low hover:bg-surface-container-highest transition-colors">
+<td class="p-4 text-tertiary">15 Avr 2024</td>
+<td class="p-4 font-mono text-xs text-secondary">#ORD-9601B</td>
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-variant rounded border border-outline-variant/50 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="router">router</span>
+</div>
+<span class="font-medium text-inverse-surface">DiGiCo SD12 Console</span>
+</td>
+<td class="p-4 text-tertiary">5 Jours</td>
+<td class="p-4 text-right">€3,500.00</td>
+<td class="p-4 text-right text-error-container">-€350.00</td>
+<td class="p-4 text-right text-primary font-semibold">€3,150.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="p-4 border-t border-outline-variant/30 bg-surface-container flex items-center justify-between">
+<span class="font-body text-body-sm text-tertiary">Affichage de 1 à 4 sur 124 transactions</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center border border-outline-variant/50 rounded text-tertiary hover:text-on-surface hover:border-outline transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center border border-outline-variant/50 rounded text-tertiary hover:text-on-surface hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Payout History & Secondary Content -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Payout History -->
+<div class="lg:col-span-2">
+<h3 class="font-headline text-headline-md text-inverse-surface mb-stack-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="history">history</span>
+                    Historique des Versements
+                </h3>
+<div class="flex flex-col gap-3">
+<!-- Payout Item -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-4 flex items-center justify-between group hover:border-outline-variant transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/50 text-secondary">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<p class="font-label text-label-md text-inverse-surface mb-0.5">Virement Bancaire (Terminant par 4092)</p>
+<p class="font-body text-body-sm text-tertiary">01 Avr 2024 • Réf: TXN-A99B2</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-headline-md text-on-surface">€4,250.00</p>
+<span class="inline-flex items-center gap-1 font-label text-[10px] uppercase text-primary bg-primary/10 px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                Complété
+                            </span>
+</div>
+</div>
+<!-- Payout Item -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-4 flex items-center justify-between group hover:border-outline-variant transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/50 text-secondary">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<p class="font-label text-label-md text-inverse-surface mb-0.5">Virement Bancaire (Terminant par 4092)</p>
+<p class="font-body text-body-sm text-tertiary">01 Mar 2024 • Réf: TXN-B88C3</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-headline-md text-on-surface">€3,890.00</p>
+<span class="inline-flex items-center gap-1 font-label text-[10px] uppercase text-primary bg-primary/10 px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                Complété
+                            </span>
+</div>
+</div>
+</div>
+<button class="mt-4 text-primary font-label text-label-md hover:underline flex items-center gap-1">
+                    Voir tout l'historique <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Spotlight / Support -->
+<div class="relative rounded-xl overflow-hidden border border-outline-variant/30 flex flex-col justify-end min-h-[300px]">
+<img alt="Concert audio setup" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0 mix-blend-screen" src="https://lh3.googleusercontent.com/aida/ADBb0uhlaPkXVa-7MZbQC14JWm7L4KVNpFeuGjODw4AFtcAmRvA1J7G8L79kK2Kg40OqnAKPLvjbS5d2nCWQ-oqBNccrwa2xPWWSNTCqXWFlIhOKfvnv6jacZ_TrIlgABDx93FlrQA-vI7lWx7qBhvqIOF13t4oKZfBC_ObOwjf-fWIDaJqLwam5x6dEpFxxMIuj3fOg8r35HOGBu1Ua6v1bitHxzJtr2JAkVKq2kHJfz0QULLHpdabmd3H0dE09fS9eLqimezq4JvfNZA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-surface/20 z-0"></div>
+<div class="relative z-10 p-stack-md">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[16px] text-on-primary fill" data-icon="headset_mic">headset_mic</span>
+</div>
+<h4 class="font-headline text-headline-md text-inverse-surface mb-2">Besoin d'aide avec vos versements ?</h4>
+<p class="font-body text-body-sm text-tertiary mb-4">Notre équipe de support partenaire est disponible 24/7 pour résoudre toute question concernant vos gains.</p>
+<button class="bg-surface-container/80 backdrop-blur border border-outline-variant hover:bg-surface-container text-on-surface font-label text-label-md px-4 py-2 rounded transition-colors w-full">
+                        Contacter le Support
+                    </button>
+</div>
+</div>
+</section>
+<footer class="mt-stack-lg pt-stack-lg border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-md">
+<div class="md:col-span-1">
+<h2 class="font-headline text-headline-sm text-primary mb-4">Vantage Audio</h2>
+<p class="font-body text-body-sm text-tertiary">Plateforme de location d'équipement audio professionnel haut de gamme pour les partenaires et les professionnels.</p>
+</div>
+<div>
+<h4 class="font-label text-label-md font-semibold text-inverse-surface mb-4 uppercase tracking-wider">Équipement</h4>
+<ul class="flex flex-col gap-2">
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="catalog.html">Systèmes Sonores</a></li>
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="catalog.html">Microphones</a></li>
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="catalog.html">Consoles de Mixage</a></li>
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="catalog.html">Backline</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label-md font-semibold text-inverse-surface mb-4 uppercase tracking-wider">Informations</h4>
+<ul class="flex flex-col gap-2">
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="#">À propos</a></li>
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="#">Conditions Générales</a></li>
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="#">Politique de Confidentialité</a></li>
+<li class=""><a class="font-body text-body-sm text-tertiary hover:text-primary transition-colors" href="dashboard-partner.html">Devenir Partenaire</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label-md font-semibold text-inverse-surface mb-4 uppercase tracking-wider">Contact</h4>
+<ul class="flex flex-col gap-2">
+<li class="flex items-center gap-2 font-body text-body-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+                    support@vantage-audio.com
+                </li>
+<li class="flex items-center gap-2 font-body text-body-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">call</span>
+                    +33 (0)1 23 45 67 89
+                </li>
+</ul>
+</div>
+</div>
+<div class="py-6 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body text-[12px] text-on-surface-variant">© 2024 Vantage Audio Pro. Tous droits réservés.</p>
+<div class="flex items-center gap-4">
+<a class="text-tertiary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">facebook</span></a>
+<a class="text-tertiary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">brand_awareness</span></a>
+<a class="text-tertiary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+</div>
+</div>
+</footer></main>
+</body></html>

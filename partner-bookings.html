@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestion des Réservations - Sonic Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#e5e2e1",
+                      "on-secondary": "#2f3131",
+                      "on-surface-variant": "#e6bcc2",
+                      "on-error-container": "#ffdad6",
+                      "inverse-on-surface": "#303030",
+                      "primary": "#ffb2bf",
+                      "on-surface": "#e2e2e2",
+                      "inverse-surface": "#e2e2e2",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "primary-fixed-dim": "#ffb2bf",
+                      "on-background": "#e2e2e2",
+                      "surface-dim": "#131313",
+                      "on-secondary-container": "#b4b5b5",
+                      "on-primary-container": "#5a0022",
+                      "on-error": "#690005",
+                      "tertiary": "#c8c6c5",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-container": "#1f1f1f",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#ffd9de",
+                      "surface-container-high": "#2a2a2a",
+                      "outline-variant": "#5d3f44",
+                      "surface-variant": "#353535",
+                      "error": "#ffb4ab",
+                      "outline": "#ac878d",
+                      "inverse-primary": "#bc004f",
+                      "surface": "#131313",
+                      "on-primary-fixed-variant": "#90003b",
+                      "surface-container-low": "#1b1b1b",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-primary-fixed": "#3f0016",
+                      "on-tertiary-container": "#2a2a2a",
+                      "surface-bright": "#393939",
+                      "on-secondary-fixed-variant": "#454747",
+                      "secondary-container": "#454747",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-primary": "#660028",
+                      "background": "#131313",
+                      "primary-container": "#ff4d80",
+                      "surface-container-highest": "#353535",
+                      "tertiary-container": "#929090",
+                      "surface-tint": "#ffb2bf",
+                      "secondary": "#c6c6c7",
+                      "on-tertiary": "#313030",
+                      "surface-container-lowest": "#0e0e0e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px"
+              },
+              "fontFamily": {
+                      "headline": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "display": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "body": [
+                              "Inter", "sans-serif"
+                      ],
+                      "label": [
+                              "Inter", "sans-serif"
+                      ]
+              },
+              "fontSize": {}
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface-container-low border-b border-outline-variant flex justify-between items-center ml-64 px-8 py-4 z-20 sticky top-0">
+<div class="font-headline text-2xl font-bold text-primary">Sonic Precision</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface hover:text-primary transition-colors active:opacity-80">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-on-surface hover:text-primary transition-colors active:opacity-80 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface hover:text-primary transition-colors active:opacity-80">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest border-r border-outline-variant h-screen w-64 fixed left-0 top-0 flex flex-col py-8 px-4 z-30">
+<div class="mb-8 px-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant shrink-0">
+<img alt="Partner Profile" class="w-full h-full object-cover" data-alt="A professional headshot of an audio engineer in a dark, atmospheric studio setting. The lighting is cinematic, highlighting the subject's face against deep shadows, reflecting the 'Pulse in the Dark' theme of the Sonic Precision brand." src="https://lh3.googleusercontent.com/aida/ADBb0uhlaPkXVa-7MZbQC14JWm7L4KVNpFeuGjODw4AFtcAmRvA1J7G8L79kK2Kg40OqnAKPLvjbS5d2nCWQ-oqBNccrwa2xPWWSNTCqXWFlIhOKfvnv6jacZ_TrIlgABDx93FlrQA-vI7lWx7qBhvqIOF13t4oKZfBC_ObOwjf-fWIDaJqLwam5x6dEpFxxMIuj3fOg8r35HOGBu1Ua6v1bitHxzJtr2JAkVKq2kHJfz0QULLHpdabmd3H0dE09fS9eLqimezq4JvfNZA"/>
+</div>
+<div>
+<div class="font-headline text-base font-bold text-primary">Sonic Precision</div>
+<div class="font-body text-xs text-on-surface-variant">Partner Portal</div>
+</div>
+</div>
+<ul class="flex-1 flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors active:scale-95 duration-150" href="dashboard-partner.html">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors active:scale-95 duration-150" href="catalog.html">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Inventory
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors active:scale-95 duration-150" href="partner-earnings.html"><span class="material-symbols-outlined">payments</span> Gains</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-primary border-r-2 border-primary font-bold bg-surface-container-high" href="partner-bookings.html"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_available</span> Réservations</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant font-medium hover:bg-surface-container-high hover:text-on-surface transition-colors active:scale-95 duration-150" href="#"><span class="material-symbols-outlined">settings</span> Paramètres</a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 p-8 xl:p-10 flex flex-col gap-12 bg-background">
+<!-- Header & Summary -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h1 class="font-headline text-4xl font-bold tracking-tight text-white mb-2">Gestion des Réservations</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl">Supervisez votre inventaire, approuvez les nouvelles demandes et suivez les locations en cours avec précision.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-high text-on-surface border border-outline-variant hover:border-primary px-6 py-2 rounded font-medium transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Exporter
+                </button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-bold transition-transform active:scale-95 flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Nouvelle Rèservation
+                </button>
+</div>
+</header>
+<!-- Status Overview Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Ongoing -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-6 flex flex-col justify-between relative overflow-hidden group hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-semibold">En cours</span>
+</div>
+<div>
+<div class="font-headline text-3xl font-bold text-white mb-1">12</div>
+<div class="font-body text-sm text-tertiary">Locations actives actuellement</div>
+</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-opacity"></div>
+</div>
+<!-- Pending -->
+<div class="bg-surface-container border border-primary rounded-lg p-6 flex flex-col justify-between relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hourglass_top</span>
+</div>
+<span class="flex items-center gap-2 font-label text-xs uppercase tracking-wider text-primary font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        En attente
+                    </span>
+</div>
+<div>
+<div class="font-headline text-3xl font-bold text-white mb-1">5</div>
+<div class="font-body text-sm text-on-surface-variant">Demandes nécessitant une action</div>
+</div>
+</div>
+<!-- Upcoming -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-6 flex flex-col justify-between relative overflow-hidden group hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</div>
+<span class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-semibold">À venir</span>
+</div>
+<div>
+<div class="font-headline text-3xl font-bold text-white mb-1">28</div>
+<div class="font-body text-sm text-tertiary">Locations confirmées (30 prochains jours)</div>
+</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-opacity"></div>
+</div>
+</section>
+<!-- Main Workspace: Bento Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Left Column: Pending Requests Table (Takes up 2/3) -->
+<section class="xl:col-span-2 flex flex-col gap-4">
+<div class="flex justify-between items-end mb-2">
+<h2 class="font-headline text-2xl font-semibold text-white">Demandes en Attente</h2>
+<a class="text-primary hover:text-primary-container font-medium text-sm transition-colors" href="catalog.html">Voir tout</a>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded-lg overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high border-b border-outline-variant">
+<tr>
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant p-4 font-semibold">Client / Projet</th>
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant p-4 font-semibold">Équipement Principal</th>
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant p-4 font-semibold">Dates</th>
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant p-4 font-semibold text-right">Valeur</th>
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant p-4 font-semibold text-center">Action</th>
+</tr>
+</thead>
+<tbody class="font-body text-sm divide-y divide-surface-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-4">
+<div class="font-medium text-white">Studio Alpha</div>
+<div class="text-xs text-on-surface-variant mt-1">Tournée Européenne</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant border border-outline-variant overflow-hidden shrink-0">
+<img alt="L-Acoustics K2" class="w-full h-full object-cover" data-alt="A close-up, high-fidelity shot of professional L-Acoustics K2 line array speakers in a dark warehouse. The speakers are meticulously stacked, illuminated by a single, stark white spotlight from above against pitch-black shadows, emphasizing the premium and technical nature of the audio equipment." src="https://lh3.googleusercontent.com/aida/ADBb0ujZiu7P0lKVrcryW24xnhaup4D0i90MsZNCXaH2RWtvB9DpIp-W3t80grU300o8xb_nYducxN0Ybx0Ff3br1IpgzDd2uIv2JaD-EaiB3YnwCpeZ8R3xVe1RPnBPkcQ48Sn3T4ZzpG2p6wyROl4lmYHj1NN4h7svvCfJIt61mjiod3P4roQSdMw7xcVcdvsgdqLQ27UR918MnW3Qkj4BOMzLmTN8JDgJSQy3a9Rkhllnk7mSsjqcbYnjvhgkyJGtxw1cdO1Nx3a8-Q"/>
+</div>
+<div>
+<div class="font-medium text-on-surface">L-Acoustics K2 System</div>
+<div class="text-xs text-tertiary mt-0.5">x12 Boîtes + Subs</div>
+</div>
+</div>
+</td>
+<td class="p-4">
+<div class="text-on-surface">12 Oct - 28 Oct</div>
+<div class="text-xs text-tertiary mt-1">16 Jours</div>
+</td>
+<td class="p-4 text-right font-mono font-medium text-white">
+                                    €14,500
+                                </td>
+<td class="p-4">
+<div class="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded bg-surface-variant text-on-surface hover:bg-error-container hover:text-on-error-container border border-outline-variant flex items-center justify-center transition-colors" title="Refuser">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center transition-colors" title="Approuver">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-4">
+<div class="font-medium text-white">Nova Events</div>
+<div class="text-xs text-on-surface-variant mt-1">Festival Electro</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant border border-outline-variant overflow-hidden shrink-0">
+<img alt="Pioneer CDJ-3000" class="w-full h-full object-cover" data-alt="Top-down view of a pair of Pioneer CDJ-3000 media players and a DJM-A9 mixer set up in a dark, moody club environment. Subtle neon pink and blue reflections hit the sleek metallic surfaces of the gear, capturing the raw nocturnal energy of live event production." src="https://lh3.googleusercontent.com/aida/ADBb0uithrV_72yw_-gNmXsm9rSwf1llKqAgPRBmjaDmK2m3vopq66UBEyPHV9Keg_eB1Fsxp7O4PRjgtme-azAXa1KOtnPKmIFgWIgWy95-8cD9NJzXVWUyrDscokoxfHRt-k1efWLs7pf0vqr46W81FVvS2p1Za1RyDTmQBSzOVD5jCvj5KrPqqlp38FkqNJxyUl5hbkvZaIlMV2orXqEexWzJnA_AfgxRw9riVFxRgykzQDzfPjpxJK_yufaR8JrRApcG-R4sA2amSA"/>
+</div>
+<div>
+<div class="font-medium text-on-surface">Pioneer DJ Nexus 2</div>
+<div class="text-xs text-tertiary mt-0.5">2x CDJ, 1x DJM</div>
+</div>
+</div>
+</td>
+<td class="p-4">
+<div class="text-on-surface">15 Oct - 17 Oct</div>
+<div class="text-xs text-tertiary mt-1">3 Jours</div>
+</td>
+<td class="p-4 text-right font-mono font-medium text-white">
+                                    €450
+                                </td>
+<td class="p-4">
+<div class="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded bg-surface-variant text-on-surface hover:bg-error-container hover:text-on-error-container border border-outline-variant flex items-center justify-center transition-colors" title="Refuser">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center transition-colors" title="Approuver">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-4">
+<div class="font-medium text-white">Théâtre Lumière</div>
+<div class="text-xs text-on-surface-variant mt-1">Pièce de théâtre</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant border border-outline-variant overflow-hidden shrink-0">
+<img alt="Shure Axient" class="w-full h-full object-cover" data-alt="A rack of Shure Axient Digital wireless microphone receivers glowing in a dark tech booth. The displays emit a crisp, technological light against the black brushed metal chassis, conveying clinical precision and high-end professional audio standards." src="https://lh3.googleusercontent.com/aida/ADBb0ujoF2Ba4o6_PrN0k1SDnwKc8pvHg8nP00XQ9H4Qhjh7Ih2Th5VLOF7diMJenu09w0B-GqDqfaIZ6Xk8mUIKRauHSeU6X5rVoEDFgfNQIbDskV1idxB_-p0DvTZ6aEgQZmcn2mCvV7in7RFh3VEabyK08MmFnLjQNeNBCZ9-ucKFrYArt0LigPsK7MeV2b2dxdE4McgE0POgKDD9S_bI6lc75Gx-Lz595eE8QvfT2y6AinORulZ_4ubJ72n2Tv7AzuX8kz2ztxR7"/>
+</div>
+<div>
+<div class="font-medium text-on-surface">Shure Axient Digital</div>
+<div class="text-xs text-tertiary mt-0.5">Rack 8 Canaux</div>
+</div>
+</div>
+</td>
+<td class="p-4">
+<div class="text-on-surface">20 Oct - 25 Nov</div>
+<div class="text-xs text-tertiary mt-1">37 Jours</div>
+</td>
+<td class="p-4 text-right font-mono font-medium text-white">
+                                    €3,200
+                                </td>
+<td class="p-4">
+<div class="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded bg-surface-variant text-on-surface hover:bg-error-container hover:text-on-error-container border border-outline-variant flex items-center justify-center transition-colors" title="Refuser">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center transition-colors" title="Approuver">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Right Column: Mini Calendar & Quick Stats (Takes up 1/3) -->
+<aside class="xl:col-span-1 flex flex-col gap-8">
+<!-- Calendar View -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-lg font-semibold text-white">Disponibilité - Octobre</h3>
+<div class="flex gap-2">
+<button class="text-on-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="text-on-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<div class="font-label text-xs text-on-surface-variant py-1">Lun</div>
+<div class="font-label text-xs text-on-surface-variant py-1">Mar</div>
+<div class="font-label text-xs text-on-surface-variant py-1">Mer</div>
+<div class="font-label text-xs text-on-surface-variant py-1">Jeu</div>
+<div class="font-label text-xs text-on-surface-variant py-1">Ven</div>
+<div class="font-label text-xs text-on-surface-variant py-1">Sam</div>
+<div class="font-label text-xs text-on-surface-variant py-1">Dim</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-sm font-body">
+<!-- Empty slots for previous month -->
+<div class="p-2 text-surface-variant">28</div>
+<div class="p-2 text-surface-variant">29</div>
+<div class="p-2 text-surface-variant">30</div>
+<!-- Days of month -->
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors">1</div>
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors">2</div>
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors">3</div>
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors relative">
+                            4
+                            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"></div>
+</div>
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors relative">
+                            5
+                             <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"></div>
+</div>
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors">6</div>
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors">7</div>
+<div class="p-2 text-on-surface bg-surface-container-high border border-outline-variant rounded font-semibold">8</div>
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors relative">
+                            9
+                            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-secondary"></div>
+</div>
+<div class="p-2 text-on-surface bg-primary/20 text-primary border border-primary/30 rounded font-semibold cursor-pointer relative">
+                            10
+                            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"></div>
+</div>
+<!-- Just a few more to show pattern -->
+<div class="p-2 text-on-surface hover:bg-surface-container-high rounded cursor-pointer transition-colors">11</div>
+<div class="p-2 text-on-surface bg-surface-variant rounded cursor-pointer transition-colors relative opacity-50">
+                            12
+                            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-tertiary-container rounded"></div>
+</div>
+<div class="p-2 text-on-surface bg-surface-variant rounded cursor-pointer transition-colors relative opacity-50">
+                            13
+                            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-tertiary-container rounded"></div>
+</div>
+<div class="p-2 text-on-surface bg-surface-variant rounded cursor-pointer transition-colors relative opacity-50">
+                            14
+                            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-tertiary-container rounded"></div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex flex-col gap-2">
+<div class="flex items-center justify-between text-xs font-body">
+<span class="flex items-center gap-2 text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary"></span>Haute Demande</span>
+<span class="flex items-center gap-2 text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary"></span>Retour Prévu</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant ml-64 p-12 z-20 mt-auto">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand & Mission -->
+<div class="flex flex-col gap-4">
+<div class="font-headline text-2xl font-bold text-primary">Sonic Precision</div>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
+                La plateforme de référence pour la location de systèmes de sonorisation professionnelle. Excellence technique et précision acoustique pour tous vos événements.
+            </p>
+<div class="flex gap-4 mt-2">
+<a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors border border-outline-variant" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors border border-outline-variant" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="font-headline text-white font-bold mb-6">Navigation</h4>
+<ul class="flex flex-col gap-4 text-sm text-on-surface-variant font-medium"><li><a class="hover:text-primary transition-colors" href="dashboard-partner.html">Tableau de bord</a></li><li><a class="hover:text-primary transition-colors" href="partner-inventory.html">Inventaire</a></li><li><a class="hover:text-primary transition-colors" href="partner-bookings.html">Réservations</a></li><li><a class="hover:text-primary transition-colors" href="partner-earnings.html">Gains</a></li></ul>
+</div>
+<!-- Resources -->
+<div>
+<h4 class="font-headline text-white font-bold mb-6">Ressources</h4>
+<ul class="flex flex-col gap-4 text-sm text-on-surface-variant font-medium"><li><a class="hover:text-primary transition-colors" href="#">Support</a></li><li><a class="hover:text-primary transition-colors" href="#">Politique de Confidentialité</a></li><li><a class="hover:text-primary transition-colors" href="#">Conditions Générales</a></li><li><a class="hover:text-primary transition-colors" href="#">Contact</a></li></ul>
+</div>
+<!-- Search/SEO Area -->
+<div>
+<h4 class="font-headline text-white font-bold mb-6">Recherche Rapide</h4>
+<div class="flex flex-wrap gap-2">
+<a class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-xs text-on-surface-variant hover:border-primary hover:text-primary transition-all" href="#">L-Acoustics</a>
+<a class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-xs text-on-surface-variant hover:border-primary hover:text-primary transition-all" href="#">Pioneer DJ</a>
+<a class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-xs text-on-surface-variant hover:border-primary hover:text-primary transition-all" href="#">Shure Axient</a>
+<a class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-xs text-on-surface-variant hover:border-primary hover:text-primary transition-all" href="#">Location HP</a>
+<a class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-xs text-on-surface-variant hover:border-primary hover:text-primary transition-all" href="#">Système Line Array</a>
+</div>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-body text-xs text-on-surface-variant">© 2024 Sonic Precision Marketplace. Tous droits réservés.</div>
+<ul class="flex gap-8 font-body text-xs">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4" href="#">Mentions Légales</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4" href="#">Confidentialité</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4" href="#">CGU / CGV</a></li>
+</ul>
+</div>
+</footer>
+</body></html>
