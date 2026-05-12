@@ -3,7 +3,31 @@
 <html class="dark" lang="fr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>VANTAGE AUDIO - Solutions Audio Pro</title>
+<title>RentSoundSystem | Location Sonorisation Professionnelle, Line Array &amp; Éclairage Événementiel</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RentSoundSystem",
+  "url": "https://rentsoundsystem.com",
+  "logo": "https://rentsoundsystem.com/logo.png",
+  "description": "Marketplace de location de matériel de sonorisation et éclairage professionnel.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://rentsoundsystem.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<meta content="RentSoundSystem : votre marketplace de confiance pour la location de sonorisation professionnelle, systèmes line array et éclairage événementiel. Matériel haut de gamme pour experts." name="description"/>
+<meta content="RentSoundSystem | Location Sonorisation &amp; Éclairage Pro" property="og:title"/>
+<meta content="Plateforme de référence pour la location de matériel de sonorisation et d'éclairage professionnel entre experts." property="og:description"/>
+<meta content="https://lh3.googleusercontent.com/aida-public/AB6AXuBMiGU28hdqafXqdQxg8L3-yOK3NoGBcEglo3AAk0QNSlIlrNK9FjX5XkS4CC0sreZdct4OzDGSeC4sxIHo6XbrJQoaDRKd7fFNJy8dimiFCMAIG49ndIKwBxf3Ia0HZYxs6LvjS9CP4lBJ7WtFpYaxRIh36F9dXWC5RuQAQxKZKv4iiQIjqaBkl6cKSiYd0Iax7QwLkqykPB271U0pLl-lx9TArmEYHOcyst25f8yJKDPzpAz1ucYV7r7_F84vJw8jgg7SUEJhKDc" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="RentSoundSystem | Location Sonorisation &amp; Éclairage Pro" name="twitter:title"/>
+<meta content="Louez du matériel audio, d'éclairage et de scène de premier ordre auprès de partenaires vérifiés." name="twitter:description"/>
+<meta content="https://lh3.googleusercontent.com/aida-public/AB6AXuBMiGU28hdqafXqdQxg8L3-yOK3NoGBcEglo3AAk0QNSlIlrNK9FjX5XkS4CC0sreZdct4OzDGSeC4sxIHo6XbrJQoaDRKd7fFNJy8dimiFCMAIG49ndIKwBxf3Ia0HZYxs6LvjS9CP4lBJ7WtFpYaxRIh36F9dXWC5RuQAQxKZKv4iiQIjqaBkl6cKSiYd0Iax7QwLkqykPB271U0pLl-lx9TArmEYHOcyst25f8yJKDPzpAz1ucYV7r7_F84vJw8jgg7SUEJhKDc" name="twitter:image"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -11,6 +35,8 @@
 <style>
         body { background-color: #131313; color: #e2e2e2; }
     </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body class="font-body-md text-body-md bg-background text-on-background min-h-screen flex flex-col">
 <!-- TopNavBar -->
@@ -41,7 +67,7 @@
 <!-- Hero Section -->
 <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden border-b border-white/5 pt-20">
 <div class="absolute inset-0 z-0">
-<img alt="Capture d'écran de l'interface Vantage Audio Marketplace" class="w-full h-full object-cover opacity-50 mix-blend-luminosity" data-alt="Une capture d'écran de l'interface du site web Vantage Audio Marketplace. Le design présente une esthétique en mode sombre avec des arrière-plans noirs profonds et des accents roses vibrants. Le matériel audio professionnel est affiché dans une disposition épurée et minimaliste. L'ambiance est corporate, technique et très dynamique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMiGU28hdqafXqdQxg8L3-yOK3NoGBcEglo3AAk0QNSlIlrNK9FjX5XkS4CC0sreZdct4OzDGSeC4sxIHo6XbrJQoaDRKd7fFNJy8dimiFCMAIG49ndIKwBxf3Ia0HZYxs6LvjS9CP4lBJ7WtFpYaxRIh36F9dXWC5RuQAQxKZKv4iiQIjqaBkl6cKSiYd0Iax7QwLkqykPB271U0pLl-lx9TArmEYHOcyst25f8yJKDPzpAz1ucYV7r7_F84vJw8jgg7SUEJhKDc"/>
+<img alt="Marketplace RentSoundSystem - Location de matériel audio et éclairage professionnel" class="w-full h-full object-cover opacity-50 mix-blend-luminosity" data-alt="Une capture d'écran de l'interface du site web Vantage Audio Marketplace. Le design présente une esthétique en mode sombre avec des arrière-plans noirs profonds et des accents roses vibrants. Le matériel audio professionnel est affiché dans une disposition épurée et minimaliste. L'ambiance est corporate, technique et très dynamique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMiGU28hdqafXqdQxg8L3-yOK3NoGBcEglo3AAk0QNSlIlrNK9FjX5XkS4CC0sreZdct4OzDGSeC4sxIHo6XbrJQoaDRKd7fFNJy8dimiFCMAIG49ndIKwBxf3Ia0HZYxs6LvjS9CP4lBJ7WtFpYaxRIh36F9dXWC5RuQAQxKZKv4iiQIjqaBkl6cKSiYd0Iax7QwLkqykPB271U0pLl-lx9TArmEYHOcyst25f8yJKDPzpAz1ucYV7r7_F84vJw8jgg7SUEJhKDc"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
 </div>
 <div class="relative z-10 w-full max-w-container-max px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center gap-stack-lg">
@@ -59,7 +85,7 @@
 <span class="material-symbols-outlined text-on-surface-variant pl-2 text-[24px]">location_on</span>
 <input class="w-full bg-transparent border-none text-on-background focus:ring-0 font-body-lg text-[18px] placeholder:text-on-surface-variant/70" placeholder="Ville ou code postal" type="text"/>
 </div>
-<button class="bg-primary text-on-primary font-label-md text-[16px] uppercase tracking-wider font-bold px-8 py-4 rounded hover:bg-primary-container transition-colors whitespace-nowrap">Rechercher</button>
+<button aria-label="Rechercher du matériel" class="bg-primary text-on-primary font-label-md text-[16px] uppercase tracking-wider font-bold px-8 py-4 rounded hover:bg-primary-container transition-colors whitespace-nowrap">Rechercher</button>
 </div>
 </div>
 </section><section class="w-full py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col gap-stack-lg">
@@ -76,7 +102,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
 <!-- Product Card 1 -->
 <div onclick="window.location.href='product.html'" class="group relative aspect-[3/4] bg-surface-container rounded-xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all cursor-pointer">
-<img alt="L-Acoustics K2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhlaPkXVa-7MZbQC14JWm7L4KVNpFeuGjODw4AFtcAmRvA1J7G8L79kK2Kg40OqnAKPLvjbS5d2nCWQ-oqBNccrwa2xPWWSNTCqXWFlIhOKfvnv6jacZ_TrIlgABDx93FlrQA-vI7lWx7qBhvqIOF13t4oKZfBC_ObOwjf-fWIDaJqLwam5x6dEpFxxMIuj3fOg8r35HOGBu1Ua6v1bitHxzJtr2JAkVKq2kHJfz0QULLHpdabmd3H0dE09fS9eLqimezq4JvfNZA"/>
+<img alt="Enceinte Line Array L-Acoustics K2 en location" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhlaPkXVa-7MZbQC14JWm7L4KVNpFeuGjODw4AFtcAmRvA1J7G8L79kK2Kg40OqnAKPLvjbS5d2nCWQ-oqBNccrwa2xPWWSNTCqXWFlIhOKfvnv6jacZ_TrIlgABDx93FlrQA-vI7lWx7qBhvqIOF13t4oKZfBC_ObOwjf-fWIDaJqLwam5x6dEpFxxMIuj3fOg8r35HOGBu1Ua6v1bitHxzJtr2JAkVKq2kHJfz0QULLHpdabmd3H0dE09fS9eLqimezq4JvfNZA"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute top-4 left-4 z-10">
 <span class="bg-background/80 backdrop-blur-md text-on-surface text-[11px] uppercase tracking-widest font-bold px-3 py-1.5 rounded border border-white/10">Audio Pro</span>
@@ -95,7 +121,7 @@
 </div>
 <!-- Product Card 2 -->
 <div onclick="window.location.href='product.html'" class="group relative aspect-[3/4] bg-surface-container rounded-xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all cursor-pointer">
-<img alt="Pioneer CDJ-3000" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaVPhV7iZOvSB59u-vxTgBHdc8dteHqsuA7QmtrTd7XbpL6FpwU4t3CDHu3jJrWsOTjwbdNjtD--07qF-CA319V9cC6MH7foJTe1NieJxKDOPGRWamDUmm-9lRFO5QbcisgqBOPx1gnAO4HPWP198W4V9U30rGOIZ08JxUI_QzEisx88rBZIExmMh0fgWbULqQtrtmXYu2pXcaid9dKmSztFDe6olhUbx6d__6XJOJKS7NLJttXtJSkJkt2gAhAdMkpvmjEHrQGh4"/>
+<img alt="Platine DJ Pioneer CDJ-3000 professionnelle en location" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaVPhV7iZOvSB59u-vxTgBHdc8dteHqsuA7QmtrTd7XbpL6FpwU4t3CDHu3jJrWsOTjwbdNjtD--07qF-CA319V9cC6MH7foJTe1NieJxKDOPGRWamDUmm-9lRFO5QbcisgqBOPx1gnAO4HPWP198W4V9U30rGOIZ08JxUI_QzEisx88rBZIExmMh0fgWbULqQtrtmXYu2pXcaid9dKmSztFDe6olhUbx6d__6XJOJKS7NLJttXtJSkJkt2gAhAdMkpvmjEHrQGh4"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute top-4 left-4 z-10">
 <span class="bg-background/80 backdrop-blur-md text-on-surface text-[11px] uppercase tracking-widest font-bold px-3 py-1.5 rounded border border-white/10">DJ Gear</span>
@@ -114,7 +140,7 @@
 </div>
 <!-- Product Card 3 -->
 <div onclick="window.location.href='product.html'" class="group relative aspect-[3/4] bg-surface-container rounded-xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all cursor-pointer">
-<img alt="Yamaha Rivage PM7" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ujZiu7P0lKVrcryW24xnhaup4D0i90MsZNCXaH2RWtvB9DpIp-W3t80grU300o8xb_nYducxN0Ybx0Ff3br1IpgzDd2uIv2JaD-EaiB3YnwCpeZ8R3xVe1RPnBPkcQ48Sn3T4ZzpG2p6wyROl4lmYHj1NN4h7svvCfJIt61mjiod3P4roQSdMw7xcVcdvsgdqLQ27UR918MnW3Qkj4BOMzLmTN8JDgJSQy3a9Rkhllnk7mSsjqcbYnjvhgkyJGtxw1cdO1Nx3a8-Q"/>
+<img alt="Console de mixage Yamaha Rivage PM7" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ujZiu7P0lKVrcryW24xnhaup4D0i90MsZNCXaH2RWtvB9DpIp-W3t80grU300o8xb_nYducxN0Ybx0Ff3br1IpgzDd2uIv2JaD-EaiB3YnwCpeZ8R3xVe1RPnBPkcQ48Sn3T4ZzpG2p6wyROl4lmYHj1NN4h7svvCfJIt61mjiod3P4roQSdMw7xcVcdvsgdqLQ27UR918MnW3Qkj4BOMzLmTN8JDgJSQy3a9Rkhllnk7mSsjqcbYnjvhgkyJGtxw1cdO1Nx3a8-Q"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute top-4 left-4 z-10">
 <span class="bg-background/80 backdrop-blur-md text-on-surface text-[11px] uppercase tracking-widest font-bold px-3 py-1.5 rounded border border-white/10">Consoles</span>
@@ -133,7 +159,7 @@
 </div>
 <!-- Product Card 4 -->
 <div onclick="window.location.href='product.html'" class="group relative aspect-[3/4] bg-surface-container rounded-xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all cursor-pointer">
-<img alt="Shure AD4D Axient Digital" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvMH7ra1eH99auy_QvpjPJZRejw_inJwkkE9LbBfas75KCwFix-VaDDM6dcVh8WttfGMQE4YpPfBxDnk4sk0t8EOR4ghApmQGLdvWkZN6ZBctHKZeWZaNZQ-AjHjgq9hXAGRAi7qkRr67DYy30I_C_LuJ6049GOfEd1Wf3wnN5l8GJP0p7kbMLfab36QqsTDA68AqZdGUqzSwEdOCI3LaX-W66um9gF-G-VkNHcLJryMfrfscst2jngRe7Qu4gsLcvJucXlQp0glI"/>
+<img alt="Système sans fil Shure AD4D Axient Digital" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvMH7ra1eH99auy_QvpjPJZRejw_inJwkkE9LbBfas75KCwFix-VaDDM6dcVh8WttfGMQE4YpPfBxDnk4sk0t8EOR4ghApmQGLdvWkZN6ZBctHKZeWZaNZQ-AjHjgq9hXAGRAi7qkRr67DYy30I_C_LuJ6049GOfEd1Wf3wnN5l8GJP0p7kbMLfab36QqsTDA68AqZdGUqzSwEdOCI3LaX-W66um9gF-G-VkNHcLJryMfrfscst2jngRe7Qu4gsLcvJucXlQp0glI"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute top-4 left-4 z-10">
 <span class="bg-background/80 backdrop-blur-md text-on-surface text-[11px] uppercase tracking-widest font-bold px-3 py-1.5 rounded border border-white/10">Wireless</span>
@@ -157,73 +183,82 @@
 <div class="flex flex-col gap-2">
 <h2 class="font-headline-lg text-[40px] text-on-background tracking-tight">Équipements disponibles autour de vous</h2>
 </div>
-<div class="relative w-full h-[600px] rounded-xl overflow-hidden border border-white/10 bg-surface-container"><!-- Background Map -->
-<img alt="Carte interactive" class="absolute inset-0 w-full h-full object-cover grayscale invert brightness-[0.3] contrast-[1.5] mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFlOB9CcRZlFEzfMxhaloEZp4yLsVehZ5YH3nNg8busfr4BK1qnPaL6yRROQqouuXbA6mhov_DPSIVQgJ5XWNkpcVX7cZnRFHv6Oes2E5JiNSLhSJ1vGWJs-w5EyEcRH5n9FuD6w8O-sCjLnM7O9Gu8h5ErJbnwCgmTO4cUZ-S8L-n8QGirxdxTzXVUUbOm47RM3yYCdaYNtDx-IJNh_ZOC7EnCfkRzSXAtkVHwqkuGfIkq_1JmQOAN-TSMq8oxy4p-4ZynWTPpko"/>
-<!-- Grid Overlay -->
-<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 32px 32px;"></div>
-<!-- Map Overlay Gradient -->
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
-<!-- Map Controls -->
-<div class="absolute right-4 bottom-4 flex flex-col gap-3 z-10">
-<button class="w-10 h-10 bg-surface-container-high border border-white/10 rounded-lg shadow-lg flex items-center justify-center text-on-surface hover:text-[#FC036D] transition-colors group">
-<span class="material-symbols-outlined group-hover:scale-110 transition-transform">my_location</span>
-</button>
-<div class="flex flex-col bg-surface-container-high border border-white/10 rounded-lg shadow-lg overflow-hidden">
-<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:text-[#FC036D] hover:bg-surface-variant transition-colors border-b border-white/10">
-<span class="material-symbols-outlined">add</span>
-</button>
-<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:text-[#FC036D] hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined">remove</span>
-</button>
-</div>
-</div>
-<!-- Map Pins -->
-<div class="absolute top-[35%] left-[45%] group z-20">
-<div class="relative flex flex-col items-center cursor-pointer -translate-y-full hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[40px] text-[#FC036D] drop-shadow-[0_0_12px_rgba(252,3,109,0.8)]" style="font-variation-settings: 'FILL' 1;">location_on</span>
-<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-64 bg-surface-container-high rounded-lg shadow-2xl border border-white/10 overflow-hidden opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-30">
-<div class="flex h-[88px]">
-<img alt="L-Acoustics K2" class="w-24 h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhlaPkXVa-7MZbQC14JWm7L4KVNpFeuGjODw4AFtcAmRvA1J7G8L79kK2Kg40OqnAKPLvjbS5d2nCWQ-oqBNccrwa2xPWWSNTCqXWFlIhOKfvnv6jacZ_TrIlgABDx93FlrQA-vI7lWx7qBhvqIOF13t4oKZfBC_ObOwjf-fWIDaJqLwam5x6dEpFxxMIuj3fOg8r35HOGBu1Ua6v1bitHxzJtr2JAkVKq2kHJfz0QULLHpdabmd3H0dE09fS9eLqimezq4JvfNZA"/>
-<div class="p-3 flex flex-col justify-center flex-1 bg-surface-container-high">
-<h4 class="font-headline-md text-[14px] leading-tight text-on-background font-bold mb-1 line-clamp-2">L-Acoustics K2</h4>
-<div class="flex flex-col gap-0.5 mt-auto">
-<span class="text-on-surface-variant text-[11px] font-medium uppercase tracking-wide">2.4 km</span>
-<span class="text-[#FC036D] font-bold text-[16px]">450€<span class="text-[11px] font-medium text-on-surface-variant ml-0.5">/j</span></span>
-</div>
-</div>
-</div>
-<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface-container-high border-b border-r border-white/10 rotate-45 z-[-1]"></div>
-</div>
-</div>
-</div>
-<div class="absolute top-[60%] left-[65%] group z-20">
-<div class="relative flex flex-col items-center cursor-pointer -translate-y-full hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[40px] text-[#FC036D] drop-shadow-[0_0_12px_rgba(252,3,109,0.8)]" style="font-variation-settings: 'FILL' 1;">location_on</span>
-<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-64 bg-surface-container-high rounded-lg shadow-2xl border border-white/10 overflow-hidden opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-30">
-<div class="flex h-[88px]">
-<img alt="Pioneer CDJ-3000" class="w-24 h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaVPhV7iZOvSB59u-vxTgBHdc8dteHqsuA7QmtrTd7XbpL6FpwU4t3CDHu3jJrWsOTjwbdNjtD--07qF-CA319V9cC6MH7foJTe1NieJxKDOPGRWamDUmm-9lRFO5QbcisgqBOPx1gnAO4HPWP198W4V9U30rGOIZ08JxUI_QzEisx88rBZIExmMh0fgWbULqQtrtmXYu2pXcaid9dKmSztFDe6olhUbx6d__6XJOJKS7NLJttXtJSkJkt2gAhAdMkpvmjEHrQGh4"/>
-<div class="p-3 flex flex-col justify-center flex-1 bg-surface-container-high">
-<h4 class="font-headline-md text-[14px] leading-tight text-on-background font-bold mb-1 line-clamp-2">Pioneer CDJ-3000</h4>
-<div class="flex flex-col gap-0.5 mt-auto">
-<span class="text-on-surface-variant text-[11px] font-medium uppercase tracking-wide">0.8 km</span>
-<span class="text-[#FC036D] font-bold text-[16px]">85€<span class="text-[11px] font-medium text-on-surface-variant ml-0.5">/j</span></span>
-</div>
-</div>
-</div>
-<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface-container-high border-b border-r border-white/10 rotate-45 z-[-1]"></div>
-</div>
-</div>
-</div>
-<div class="absolute top-[25%] left-[25%] z-20">
-<div class="relative flex flex-col items-center cursor-pointer -translate-y-full hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[36px] text-[#FC036D] drop-shadow-[0_0_10px_rgba(252,3,109,0.7)]" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
-</div>
-<div class="absolute top-[50%] left-[80%] z-20">
-<div class="relative flex flex-col items-center cursor-pointer -translate-y-full hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[36px] text-[#FC036D] drop-shadow-[0_0_10px_rgba(252,3,109,0.7)]" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
-</div></div>
+<div id="map" class="relative w-full h-[600px] rounded-xl overflow-hidden border border-white/10 bg-surface-container" style="background:#131313;"></div>
+<style>
+  /* Style sombre pour la carte Leaflet */
+  #map .leaflet-tile { filter: hue-rotate(180deg) invert(1) brightness(0.95) contrast(0.85); }
+  #map .leaflet-control-attribution { background: rgba(31,31,31,0.8) !important; color: #ac878d !important; font-size: 10px; }
+  #map .leaflet-control-attribution a { color: #ffb2bf !important; }
+  #map .leaflet-popup-content-wrapper { background: #2a2a2a; color: #e2e2e2; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; }
+  #map .leaflet-popup-tip { background: #2a2a2a; }
+  #map .leaflet-popup-content { margin: 12px 16px; font-family: 'Inter', sans-serif; }
+  #map .leaflet-popup-content h4 { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700; margin: 0 0 4px 0; color: #fff; }
+  #map .leaflet-popup-content p { font-size: 12px; margin: 0; color: #ac878d; }
+  #map .leaflet-popup-content .price { color: #FC036D; font-weight: 700; font-size: 16px; margin-top: 6px; display: block; }
+  #map .leaflet-control-zoom a { background: #2a2a2a !important; color: #e2e2e2 !important; border-color: rgba(255,255,255,0.1) !important; }
+  #map .leaflet-control-zoom a:hover { background: #353535 !important; color: #FC036D !important; }
+  /* Marqueurs personnalisés */
+  .custom-pin {
+    background: #FC036D;
+    width: 16px;
+    height: 16px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 3px solid #131313;
+    box-shadow: 0 0 12px rgba(252,3,109,0.8);
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialiser la carte centrée sur l'Europe
+    var map = L.map('map', {
+      center: [48.8566, 2.3522], // Paris
+      zoom: 5,
+      zoomControl: true,
+      scrollWheelZoom: false  // Évite le zoom accidentel au scroll
+    });
+
+    // Tuiles OpenStreetMap (gratuit, libre de droits)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Icône personnalisée rose
+    var pinkIcon = L.divIcon({
+      className: 'custom-pin',
+      iconSize: [16, 16],
+      iconAnchor: [8, 16],
+      popupAnchor: [0, -16]
+    });
+
+    // Marqueurs des 5 villes principales (vos hubs)
+    var hubs = [
+      { name: 'Paris', lat: 48.8566, lng: 2.3522, equipment: 'L-Acoustics K2', price: '450€', country: 'France' },
+      { name: 'New York', lat: 40.7128, lng: -74.0060, equipment: 'Pioneer CDJ-3000', price: '85€', country: 'USA' },
+      { name: 'London', lat: 51.5074, lng: -0.1278, equipment: 'Yamaha Rivage PM7', price: '1200€', country: 'United Kingdom' },
+      { name: 'Berlin', lat: 52.5200, lng: 13.4050, equipment: 'Shure AD4D Axient', price: '150€', country: 'Germany' },
+      { name: 'Madrid', lat: 40.4168, lng: -3.7038, equipment: 'Allen & Heath dLive S5000', price: '350€', country: 'Spain' }
+    ];
+
+    hubs.forEach(function(hub) {
+      var marker = L.marker([hub.lat, hub.lng], { icon: pinkIcon }).addTo(map);
+      marker.bindPopup(
+        '<h4>' + hub.equipment + '</h4>' +
+        '<p>' + hub.name + ', ' + hub.country + '</p>' +
+        '<span class="price">' + hub.price + ' <span style="color:#ac878d; font-size:11px; font-weight:400">/jour</span></span>'
+      );
+    });
+
+    // Activer scroll zoom quand on clique sur la carte
+    map.on('click', function() {
+      map.scrollWheelZoom.enable();
+    });
+    map.on('mouseout', function() {
+      map.scrollWheelZoom.disable();
+    });
+  });
+</script>
 </section>
 <!-- Featured Categories Bento Grid -->
 <section class="w-full py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col gap-stack-lg">
@@ -300,7 +335,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Main Category -->
-<a class="md:col-span-2 relative min-h-[500px] rounded-xl overflow-hidden group border border-white/10 hover:border-primary/50 transition-all block" href="catalog.html"><img alt="Systèmes de Sonorisation" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 mix-blend-lighten" src="https://lh3.googleusercontent.com/aida/ADBb0uithrV_72yw_-gNmXsm9rSwf1llKqAgPRBmjaDmK2m3vopq66UBEyPHV9Keg_eB1Fsxp7O4PRjgtme-azAXa1KOtnPKmIFgWIgWy95-8cD9NJzXVWUyrDscokoxfHRt-k1efWLs7pf0vqr46W81FVvS2p1Za1RyDTmQBSzOVD5jCvj5KrPqqlp38FkqNJxyUl5hbkvZaIlMV2orXqEexWzJnA_AfgxRw9riVFxRgykzQDzfPjpxJK_yufaR8JrRApcG-R4sA2amSA"/>
+<a class="md:col-span-2 relative min-h-[500px] rounded-xl overflow-hidden group border border-white/10 hover:border-primary/50 transition-all block" href="catalog.html"><img alt="Large sélection de Line Arrays et Systèmes de Sonorisation pour concerts" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 mix-blend-lighten" src="https://lh3.googleusercontent.com/aida/ADBb0uithrV_72yw_-gNmXsm9rSwf1llKqAgPRBmjaDmK2m3vopq66UBEyPHV9Keg_eB1Fsxp7O4PRjgtme-azAXa1KOtnPKmIFgWIgWy95-8cD9NJzXVWUyrDscokoxfHRt-k1efWLs7pf0vqr46W81FVvS2p1Za1RyDTmQBSzOVD5jCvj5KrPqqlp38FkqNJxyUl5hbkvZaIlMV2orXqEexWzJnA_AfgxRw9riVFxRgykzQDzfPjpxJK_yufaR8JrRApcG-R4sA2amSA"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
 <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
 <div class="bg-background/80 backdrop-blur-md self-start px-4 py-2 rounded-md mb-4 border border-white/10">
@@ -311,7 +346,7 @@
 </div>
 </a>
 <!-- Sub Category 1 -->
-<a class="relative min-h-[500px] rounded-xl overflow-hidden group border border-white/10 hover:border-primary/50 transition-all block" href="catalog.html"><img alt="Lyres et Éclairage" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 mix-blend-lighten" src="https://lh3.googleusercontent.com/aida/ADBb0ujoF2Ba4o6_PrN0k1SDnwKc8pvHg8nP00XQ9H4Qhjh7Ih2Th5VLOF7diMJenu09w0B-GqDqfaIZ6Xk8mUIKRauHSeU6X5rVoEDFgfNQIbDskV1idxB_-p0DvTZ6aEgQZmcn2mCvV7in7RFh3VEabyK08MmFnLjQNeNBCZ9-ucKFrYArt0LigPsK7MeV2b2dxdE4McgE0POgKDD9S_bI6lc75Gx-Lz595eE8QvfT2y6AinORulZ_4ubJ72n2Tv7AzuX8kz2ztxR7"/>
+<a class="relative min-h-[500px] rounded-xl overflow-hidden group border border-white/10 hover:border-primary/50 transition-all block" href="catalog.html"><img alt="Équipements d'éclairage événementiel et Lyres asservies" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 mix-blend-lighten" src="https://lh3.googleusercontent.com/aida/ADBb0ujoF2Ba4o6_PrN0k1SDnwKc8pvHg8nP00XQ9H4Qhjh7Ih2Th5VLOF7diMJenu09w0B-GqDqfaIZ6Xk8mUIKRauHSeU6X5rVoEDFgfNQIbDskV1idxB_-p0DvTZ6aEgQZmcn2mCvV7in7RFh3VEabyK08MmFnLjQNeNBCZ9-ucKFrYArt0LigPsK7MeV2b2dxdE4McgE0POgKDD9S_bI6lc75Gx-Lz595eE8QvfT2y6AinORulZ_4ubJ72n2Tv7AzuX8kz2ztxR7"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
 <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
 <div class="bg-background/80 backdrop-blur-md self-start px-4 py-2 rounded-md mb-4 border border-white/10">
@@ -335,16 +370,15 @@
                     La plateforme de référence pour la location de matériel de sonorisation et d'éclairage professionnel entre experts de l'événementiel.
                 </p>
 <div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">share</span>
+<a aria-label="Suivez-nous sur Facebook" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3l-.5 3H13v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg>
 </a>
-<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">public</span>
+<a aria-label="Suivez-nous sur Instagram" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
 </a>
-<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">mail</span>
-</a>
-</div>
+<a aria-label="Suivez-nous sur LinkedIn" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a></div>
 </div>
 <!-- Marketplace Column -->
 <div class="flex flex-col gap-6">
@@ -352,7 +386,7 @@
 <nav class="flex flex-col gap-3">
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="catalog.html">Louer du matériel</a>
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="dashboard-partner.html">Devenir Partenaire</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="dashboard-partner.html">Comment ça marche</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Comment ça marche</a>
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Assurance &amp; Protection</a>
 </nav>
 </div>
@@ -380,7 +414,7 @@
 <!-- Bottom Bar -->
 <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
 <span class="font-body-sm text-body-sm text-on-secondary-container text-center md:text-left">
-                © 2024 Vantage Audio Marketplace. Logistique Sonore Professionnelle.
+                © 2026 RentSoundSystem.com. Logistique Sonore Professionnelle.
             </span>
 <nav class="flex flex-wrap justify-center gap-6">
 <a class="font-body-sm text-body-sm text-on-secondary-container hover:text-primary transition-colors" href="#">Conditions d'utilisation</a>
