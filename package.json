@@ -1,0 +1,16 @@
+{
+  "name": "rentsoundsystem",
+  "version": "1.0.0",
+  "description": "RentSoundSystem - Marketplace international de location de matériel audio professionnel",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "tailwindcss": "^3.4.1"
+  }
+}
