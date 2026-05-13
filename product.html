@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="fr"><head>
+<html class="dark" lang="fr">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Système Sonore Funktion-One - Agadir - RentSoundSystem.com</title>
@@ -12,100 +12,71 @@
     darkMode: "class",
     theme: {
       extend: {
-        "colors": {
-                "tertiary-fixed-dim": "#c8c6c5",
-                "on-tertiary-container": "#2a2a2a",
-                "on-primary-container": "#5a0022",
-                "primary": "#FC036D",
-                "secondary-fixed-dim": "#c6c6c7",
-                "on-secondary": "#2f3131",
-                "surface-container-low": "#1b1b1b",
-                "secondary": "#c6c6c7",
-                "on-primary-fixed": "#3f0016",
-                "surface-container-lowest": "#0e0e0e",
-                "on-primary": "#ffffff",
-                "on-secondary-fixed-variant": "#454747",
-                "on-tertiary": "#313030",
-                "surface-container": "#1f1f1f",
-                "on-error-container": "#ffdad6",
-                "tertiary-fixed": "#e5e2e1",
-                "surface-container-highest": "#353535",
-                "inverse-surface": "#e2e2e2",
-                "inverse-on-surface": "#303030",
-                "primary-fixed": "#ffd9de",
-                "surface-variant": "#353535",
-                "on-surface-variant": "#a8a8a8",
-                "surface-tint": "#FC036D",
-                "on-primary-fixed-variant": "#90003b",
-                "tertiary-container": "#929090",
-                "surface-dim": "#131313",
-                "secondary-container": "#454747",
-                "outline-variant": "#5d3f44",
-                "on-surface": "#e2e2e2",
-                "on-error": "#690005",
-                "background": "#131313",
-                "error-container": "#93000a",
-                "inverse-primary": "#bc004f",
-                "tertiary": "#c8c6c5",
-                "on-secondary-fixed": "#1a1c1c",
-                "secondary-fixed": "#e2e2e2",
-                "primary-fixed-dim": "#FC036D",
-                "primary-container": "#ff4d80",
-                "error": "#ffb4ab",
-                "surface-container-high": "#2a2a2a",
-                "on-secondary-container": "#b4b5b5",
-                "on-tertiary-fixed-variant": "#474746",
-                "outline": "#ac878d",
-                "surface-bright": "#393939",
-                "surface": "#131313",
-                "on-tertiary-fixed": "#1c1b1b",
-                "on-background": "#e2e2e2"
+        colors: {
+          "primary": "#FC036D",
+          "primary-container": "#ff4d80",
+          "primary-fixed": "#ffd9de",
+          "primary-fixed-dim": "#FC036D",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#5a0022",
+          "on-primary-fixed": "#3f0016",
+          "on-primary-fixed-variant": "#90003b",
+          "inverse-primary": "#bc004f",
+          "surface-tint": "#FC036D",
+          "background": "#131313",
+          "surface": "#131313",
+          "surface-dim": "#131313",
+          "surface-bright": "#393939",
+          "surface-variant": "#353535",
+          "surface-container-lowest": "#0e0e0e",
+          "surface-container-low": "#1b1b1b",
+          "surface-container": "#1f1f1f",
+          "surface-container-high": "#2a2a2a",
+          "surface-container-highest": "#353535",
+          "on-background": "#e2e2e2",
+          "on-surface": "#e2e2e2",
+          "on-surface-variant": "#a8a8a8",
+          "inverse-surface": "#e2e2e2",
+          "inverse-on-surface": "#303030",
+          "secondary": "#c6c6c7",
+          "on-secondary": "#2f3131",
+          "secondary-container": "#454747",
+          "on-secondary-container": "#b4b5b5",
+          "tertiary": "#c8c6c5",
+          "on-tertiary": "#313030",
+          "tertiary-container": "#929090",
+          "on-tertiary-container": "#2a2a2a",
+          "outline": "#ac878d",
+          "outline-variant": "#5d3f44",
+          "error": "#ffb4ab",
+          "on-error": "#690005",
+          "error-container": "#93000a",
+          "on-error-container": "#ffdad6"
         },
-        "borderRadius": {
-                "DEFAULT": "0.125rem",
-                "lg": "0.25rem",
-                "xl": "0.5rem",
-                "full": "0.75rem"
+        borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        fontFamily: { "headline": ["Manrope"], "body": ["Inter"], "label": ["Inter"] },
+        keyframes: {
+          "glow-pulse": {
+            "0%, 100%": { boxShadow: "0 0 10px rgba(252, 3, 109, 0.2)" },
+            "50%": { boxShadow: "0 0 25px rgba(252, 3, 109, 0.6)" }
+          }
         },
-        "spacing": {},
-        "fontFamily": {
-                "headline": [
-                        "Manrope"
-                ],
-                "display": [
-                        "Manrope"
-                ],
-                "body": [
-                        "Inter"
-                ],
-                "label": [
-                        "Inter"
-                ]
-        },
-        "fontSize": {},
-        "keyframes": {
-            "glow-pulse": {
-                "0%, 100%": { boxShadow: "0 0 10px rgba(252, 3, 109, 0.2)" },
-                "50%": { boxShadow: "0 0 25px rgba(252, 3, 109, 0.6)" }
-            }
-        },
-        "animation": {
-            "glow-pulse": "glow-pulse 2s infinite"
-        }
-},
-    },
+        animation: { "glow-pulse": "glow-pulse 2s infinite" }
+      }
+    }
   }
 </script>
 </head>
 <body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col pt-20">
-<!-- TopNavBar Component -->
+
+<!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-10 h-20 bg-background/95 backdrop-blur-md border-b border-outline-variant/10">
-<a href="index.html" class="font-headline text-headline-md font-bold text-primary">RentSoundSystem.com</a>
+<a href="index.html" class="font-headline text-2xl font-bold text-primary">RentSoundSystem.com</a>
 <div class="hidden md:flex space-x-8">
-<a class="text-on-surface-variant hover:text-on-surface font-body text-body-md transition-colors" href="catalog.html">Louer du matériel</a>
-<a class="text-primary border-b-2 border-primary pb-1 font-body text-body-md transition-colors" href="catalog.html">Catalogue</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body text-body-md transition-colors" href="#">Devenir Partenaire</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body text-body-md transition-colors" href="#">Assistance</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body text-base transition-colors" href="catalog.html">Louer du matériel</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body text-base transition-colors" href="catalog.html">Catalogue</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body text-base transition-colors" href="#">Devenir Partenaire</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body text-base transition-colors" href="#">Assistance</a>
 </div>
 <div class="flex items-center space-x-4">
 <a href="checkout.html" class="p-2 text-primary hover:bg-surface-container-high transition-colors rounded-full">
@@ -116,13 +87,12 @@
 </a>
 </div>
 </nav>
-<!-- Main Content Canvas -->
+
 <main class="flex-grow container mx-auto max-w-[1280px] px-6 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Left Column: Visuals & Details -->
+
 <div class="lg:col-span-7 space-y-8">
-<!-- Breadcrumb & Vendor Context -->
-<div class="flex items-center justify-between">
-<div class="flex items-center space-x-2 text-body-sm text-on-surface-variant">
+<div class="flex items-center justify-between flex-wrap gap-4">
+<div class="flex items-center space-x-2 text-sm text-on-surface-variant">
 <a class="hover:text-primary transition-colors" href="catalog.html">Catalogue</a>
 <span class="material-symbols-outlined text-[16px]">chevron_right</span>
 <a class="hover:text-primary transition-colors" href="catalog.html">Systèmes Son</a>
@@ -130,248 +100,378 @@
 <span class="text-on-surface">Système Sonore Funktion-One</span>
 </div>
 <div class="flex items-center space-x-3 bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/30">
-<div class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/50">
+<div class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant/50">
 <span class="material-symbols-outlined text-primary">storefront</span>
 </div>
 <div>
-<div class="font-headline text-body-md font-bold text-on-surface uppercase tracking-wide">AGADIR</div>
-<div class="font-body text-body-sm text-on-surface-variant uppercase tracking-wider">MAROC</div>
+<div class="font-headline text-base font-bold text-on-surface uppercase tracking-wide">AGADIR</div>
+<div class="font-body text-sm text-on-surface-variant uppercase tracking-wider">MAROC</div>
 </div>
 </div>
 </div>
-<!-- Product Image Gallery -->
+
 <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 p-8 flex flex-col space-y-6">
-<!-- Main Image -->
 <div class="aspect-square md:aspect-[4/3] bg-surface relative rounded-lg overflow-hidden flex items-center justify-center group border border-outline-variant/10">
-<img alt="Système Sonore Funktion-One" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=1200&q=80"/>
+<img id="mainImage" alt="Funktion-One" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=1200&q=80"/>
 </div>
-<!-- Thumbnails -->
 <div class="grid grid-cols-5 gap-4">
-<button class="aspect-square rounded bg-surface border-2 border-primary overflow-hidden">
-<img alt="Thumbnail 1" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=300&q=80"/>
+<button data-src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=1200&q=80" class="thumb-btn aspect-square rounded bg-surface border-2 border-primary overflow-hidden">
+<img alt="T1" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=300&q=80"/>
 </button>
-<button class="aspect-square rounded bg-surface border border-outline-variant/30 hover:border-outline-variant overflow-hidden opacity-60 hover:opacity-100 transition-all">
-<img alt="Thumbnail 2" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80"/>
+<button data-src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80" class="thumb-btn aspect-square rounded bg-surface border border-outline-variant/30 hover:border-outline-variant overflow-hidden opacity-60 hover:opacity-100 transition-all">
+<img alt="T2" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80"/>
 </button>
-<button class="aspect-square rounded bg-surface border border-outline-variant/30 hover:border-outline-variant overflow-hidden opacity-60 hover:opacity-100 transition-all">
-<img alt="Thumbnail 3" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&q=80"/>
+<button data-src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80" class="thumb-btn aspect-square rounded bg-surface border border-outline-variant/30 hover:border-outline-variant overflow-hidden opacity-60 hover:opacity-100 transition-all">
+<img alt="T3" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&q=80"/>
 </button>
-<button class="aspect-square rounded bg-surface border border-outline-variant/30 hover:border-outline-variant overflow-hidden opacity-60 hover:opacity-100 transition-all">
-<img alt="Thumbnail 4" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=300&q=80"/>
+<button data-src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1200&q=80" class="thumb-btn aspect-square rounded bg-surface border border-outline-variant/30 hover:border-outline-variant overflow-hidden opacity-60 hover:opacity-100 transition-all">
+<img alt="T4" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=300&q=80"/>
 </button>
 <button class="aspect-square rounded bg-surface border border-outline-variant/30 hover:border-outline-variant overflow-hidden opacity-60 hover:opacity-100 transition-all flex items-center justify-center">
 <span class="material-symbols-outlined text-outline-variant text-[32px]">add_photo_alternate</span>
 </button>
 </div>
 </div>
-<!-- Detailed Description & Specs Tabs -->
+
 <div class="bg-surface-container-low rounded-xl border border-outline-variant/20 overflow-hidden">
 <div class="flex border-b border-outline-variant/20">
-<button class="flex-1 py-4 text-center font-headline font-bold text-body-md text-primary border-b-2 border-primary bg-surface-container-high">Aperçu</button>
-<button class="flex-1 py-4 text-center font-headline font-semibold text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Spécifications techniques</button>
-<button class="flex-1 py-4 text-center font-headline font-semibold text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Inclus</button>
+<button data-tab="apercu" class="tab-btn flex-1 py-4 text-center font-headline font-bold text-base text-primary border-b-2 border-primary bg-surface-container-high transition-colors">Aperçu</button>
+<button data-tab="specs" class="tab-btn flex-1 py-4 text-center font-headline font-semibold text-base text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Spécifications</button>
+<button data-tab="inclus" class="tab-btn flex-1 py-4 text-center font-headline font-semibold text-base text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Inclus</button>
 </div>
 <div class="p-8 space-y-6">
-<h3 class="font-headline text-headline-lg text-on-surface">Puissance Organique &amp; Clarté Légendaire</h3>
-<p class="font-body text-body-md text-on-surface-variant leading-relaxed">Découvrez le son légendaire de Funktion-One avec notre système configuré pour Agadir. Réputé pour sa fidélité sonore exceptionnelle et son design unique sans égal, le système Resolution 4 offre une immersion totale. Associé aux caissons de basse F121, il délivre une puissance organique parfaite pour les clubs de prestige et les festivals en plein air exigeant le meilleur de la technologie audio analogique.</p>
+<div id="tab-apercu" class="tab-content space-y-6">
+<h3 class="font-headline text-3xl text-on-surface">Puissance Organique &amp; Clarté Légendaire</h3>
+<p class="font-body text-base text-on-surface-variant leading-relaxed">Découvrez le son légendaire de Funktion-One avec notre système configuré pour Agadir. Le système Resolution 4 offre une immersion totale. Associé aux caissons de basse F121, il délivre une puissance organique parfaite pour les clubs et festivals.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
 <div class="bg-surface p-4 rounded border border-outline-variant/20 flex items-start space-x-3">
 <span class="material-symbols-outlined text-primary">speaker</span>
 <div>
-<div class="font-label text-label-caps text-on-surface mb-1">Enceintes</div>
-<div class="font-body text-body-sm text-on-surface-variant">2x Resolution 4, 2x F121</div>
+<div class="font-label text-xs uppercase tracking-wider text-on-surface mb-1">Enceintes</div>
+<div class="font-body text-sm text-on-surface-variant">2x Resolution 4, 2x F121</div>
 </div>
 </div>
 <div class="bg-surface p-4 rounded border border-outline-variant/20 flex items-start space-x-3">
 <span class="material-symbols-outlined text-primary">settings_input_component</span>
 <div>
-<div class="font-label text-label-caps text-on-surface mb-1">Amplification</div>
-<div class="font-body text-body-sm text-on-surface-variant">Rack d'amplification complet, Câblage haute fidélité</div>
+<div class="font-label text-xs uppercase tracking-wider text-on-surface mb-1">Amplification</div>
+<div class="font-body text-sm text-on-surface-variant">Rack complet, Câblage haute fidélité</div>
 </div>
 </div>
 </div>
 </div>
+<div id="tab-specs" class="tab-content hidden space-y-4">
+<h3 class="font-headline text-2xl text-on-surface mb-4">Spécifications techniques détaillées</h3>
+<ul class="divide-y divide-outline-variant/20">
+<li class="flex justify-between py-3"><span class="text-on-surface-variant">Réponse en fréquence</span><span class="text-on-surface font-medium">35 Hz - 18 kHz</span></li>
+<li class="flex justify-between py-3"><span class="text-on-surface-variant">Sensibilité</span><span class="text-on-surface font-medium">101 dB SPL @ 1W/1m</span></li>
+<li class="flex justify-between py-3"><span class="text-on-surface-variant">Puissance max</span><span class="text-on-surface font-medium">2000 W RMS</span></li>
+<li class="flex justify-between py-3"><span class="text-on-surface-variant">Impédance</span><span class="text-on-surface font-medium">8 Ω</span></li>
+<li class="flex justify-between py-3"><span class="text-on-surface-variant">Dispersion (H x V)</span><span class="text-on-surface font-medium">60° x 40°</span></li>
+<li class="flex justify-between py-3"><span class="text-on-surface-variant">Poids unitaire</span><span class="text-on-surface font-medium">42 kg</span></li>
+</ul>
+</div>
+<div id="tab-inclus" class="tab-content hidden space-y-4">
+<h3 class="font-headline text-2xl text-on-surface mb-4">Inclus dans la location</h3>
+<ul class="space-y-3">
+<li class="flex items-center space-x-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface">2x Enceintes Funktion-One Resolution 4</span></li>
+<li class="flex items-center space-x-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface">2x Caissons de basse Funktion-One F121</span></li>
+<li class="flex items-center space-x-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface">Rack d'amplification complet</span></li>
+<li class="flex items-center space-x-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface">Câblage Speakon + Powercon</span></li>
+<li class="flex items-center space-x-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface">Pieds d'enceintes professionnels</span></li>
+<li class="flex items-center space-x-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface">Housses de protection</span></li>
+</ul>
 </div>
 </div>
-<!-- Right Column: Configuration & Booking Action -->
+</div>
+</div>
+
 <div class="lg:col-span-5">
 <div class="sticky top-28 space-y-6">
-<!-- Title & Core Stats -->
 <div>
-<h1 class="font-headline text-headline-xl text-on-surface mb-4">Système Sonore Funktion-One - Agadir</h1>
-<!-- Core Stats Bento -->
+<h1 class="font-headline text-4xl text-on-surface mb-4 leading-tight">Système Sonore Funktion-One - Agadir</h1>
 <div class="grid grid-cols-2 gap-2 mb-6">
 <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20 flex flex-col justify-center items-center text-center">
-<div class="font-label text-label-caps text-on-surface-variant mb-1">Application</div>
-<div class="font-headline text-headline-md text-primary font-bold">Clubs &amp; Festivals</div>
+<div class="font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1">Application</div>
+<div class="font-headline text-base text-primary font-bold">Clubs &amp; Festivals</div>
 </div>
 <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20 flex flex-col justify-center items-center text-center">
-<div class="font-label text-label-caps text-on-surface-variant mb-1">Réponse en fréq.</div>
-<div class="font-headline text-headline-md text-on-surface font-bold">35Hz - 18kHz</div>
+<div class="font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1">Réponse en fréq.</div>
+<div class="font-headline text-base text-on-surface font-bold">35Hz - 18kHz</div>
 </div>
 <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20 flex flex-col justify-center items-center text-center">
-<div class="font-label text-label-caps text-on-surface-variant mb-1">Médiums-Aigus</div>
-<div class="font-headline text-headline-md text-on-surface font-bold">2x Resolution 4</div>
+<div class="font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1">Médiums-Aigus</div>
+<div class="font-headline text-base text-on-surface font-bold">2x Resolution 4</div>
 </div>
 <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20 flex flex-col justify-center items-center text-center">
-<div class="font-label text-label-caps text-on-surface-variant mb-1">Caissons de basses</div>
-<div class="font-headline text-headline-md text-on-surface font-bold">2x F121</div>
+<div class="font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1">Caissons de basses</div>
+<div class="font-headline text-base text-on-surface font-bold">2x F121</div>
 </div>
 </div>
 </div>
-<!-- Booking Panel -->
+
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-lg relative overflow-hidden">
-<!-- Subtle Glow -->
 <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 blur-[50px] rounded-full pointer-events-none"></div>
+
 <div class="flex justify-between items-end mb-6 border-b border-outline-variant/20 pb-4">
 <div>
-<div class="font-label text-label-caps text-on-surface-variant mb-1">Tarif de base</div>
-<div class="font-headline text-headline-lg text-primary font-bold">850.00€ <span class="text-body-md text-on-surface-variant font-normal">/ jour</span></div>
+<div class="font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1">Tarif de base</div>
+<div class="font-headline text-3xl text-primary font-bold">850,00 € <span class="text-base text-on-surface-variant font-normal">/ jour</span></div>
 </div>
 <div class="flex items-center space-x-2">
-<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/30 text-on-surface hover:border-primary transition-colors">-</button>
-<span class="font-body text-body-lg w-8 text-center">1</span>
-<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/30 text-on-surface hover:border-primary transition-colors">+</button>
+<button id="qtyMinus" class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/30 text-on-surface hover:border-primary transition-colors">-</button>
+<span id="qtyValue" class="font-body text-lg w-8 text-center">1</span>
+<button id="qtyPlus" class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/30 text-on-surface hover:border-primary transition-colors">+</button>
 </div>
 </div>
-<!-- Date Picker Placeholder -->
+
 <div class="mb-6">
-<label class="block font-label text-label-caps text-on-surface mb-2">Date de location</label>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface mb-2">Période de location</label>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-xs text-on-surface-variant mb-1">Date de début</label>
+<input id="startDate" type="date" class="w-full bg-surface border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:border-primary focus:outline-none transition-colors"/>
+</div>
+<div>
+<label class="block text-xs text-on-surface-variant mb-1">Date de fin</label>
+<input id="endDate" type="date" class="w-full bg-surface border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:border-primary focus:outline-none transition-colors"/>
+</div>
+</div>
+<div id="durationDisplay" class="mt-3 text-sm text-on-surface-variant hidden">
+<span class="material-symbols-outlined text-[16px] align-middle text-primary">schedule</span>
+Durée : <span id="durationDays" class="text-on-surface font-medium">0</span> jour(s)
+</div>
+<p id="dateError" class="mt-2 text-sm text-error hidden"></p>
+</div>
+
+<div class="mb-6">
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface mb-2">Disponibilités</label>
 <div class="border border-outline-variant/30 rounded-lg overflow-hidden bg-surface">
 <div class="bg-primary flex justify-between items-center p-3 text-on-primary font-bold">
-<span class="material-symbols-outlined cursor-pointer text-[20px]">chevron_left</span>
-<span>Mai 2026</span>
-<span class="material-symbols-outlined cursor-pointer text-[20px]">chevron_right</span>
+<button id="prevMonth" class="material-symbols-outlined cursor-pointer text-[20px] hover:opacity-80">chevron_left</button>
+<span id="monthLabel">Mai 2026</span>
+<button id="nextMonth" class="material-symbols-outlined cursor-pointer text-[20px] hover:opacity-80">chevron_right</button>
 </div>
-<div class="p-3 grid grid-cols-7 gap-1 text-center font-body text-body-sm text-on-surface-variant">
+<div class="p-3 grid grid-cols-7 gap-1 text-center font-body text-sm text-on-surface-variant">
 <div>Di</div><div>Lu</div><div>Ma</div><div>Me</div><div>Je</div><div>Ve</div><div>Sa</div>
-<!-- Empty days -->
-<div class="py-2 opacity-30"></div><div class="py-2 opacity-30"></div><div class="py-2 opacity-30"></div><div class="py-2 opacity-30"></div><div class="py-2 opacity-30"></div>
-<div class="py-2 border border-outline-variant/10 rounded">1</div>
-<div class="py-2 border border-outline-variant/10 rounded">2</div>
-<!-- Week 1 -->
-<div class="py-2 border border-outline-variant/10 rounded">3</div>
-<div class="py-2 border border-outline-variant/10 rounded">4</div>
-<div class="py-2 border border-outline-variant/10 rounded">5</div>
-<div class="py-2 border border-outline-variant/10 rounded">6</div>
-<div class="py-2 border border-outline-variant/10 rounded">7</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">8</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">9</div>
-<!-- Week 2 -->
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">10</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">11</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">12</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">13</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">14</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">15</div>
-<div class="py-2 border border-outline-variant/30 rounded bg-surface-container font-bold text-on-surface">16</div>
+</div>
+<div id="calendarGrid" class="px-3 pb-3 grid grid-cols-7 gap-1 text-center font-body text-sm"></div>
 </div>
 </div>
-</div>
-<!-- Options -->
+
 <div class="space-y-3 mb-8">
 <label class="flex items-center space-x-3 cursor-pointer group">
-<input class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-background rounded-sm h-5 w-5" type="checkbox"/>
-<span class="font-body text-body-md text-on-surface group-hover:text-primary transition-colors flex-1">Frais de livraison</span>
-<span class="font-body text-body-md text-on-surface-variant">+50.00 €</span>
+<input id="optDelivery" class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-background rounded h-5 w-5" type="checkbox"/>
+<span class="font-body text-base text-on-surface group-hover:text-primary transition-colors flex-1">Frais de livraison</span>
+<span class="font-body text-base text-on-surface-variant">+50,00 €</span>
 </label>
 <label class="flex items-center space-x-3 cursor-pointer group">
-<input class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-background rounded-sm h-5 w-5" type="checkbox"/>
-<span class="font-body text-body-md text-on-surface group-hover:text-primary transition-colors flex-1">Installation technique</span>
-<span class="font-body text-body-md text-on-surface-variant">+150.00 €</span>
+<input id="optInstall" class="form-checkbox bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-background rounded h-5 w-5" type="checkbox"/>
+<span class="font-body text-base text-on-surface group-hover:text-primary transition-colors flex-1">Installation technique</span>
+<span class="font-body text-base text-on-surface-variant">+150,00 €</span>
 </label>
 </div>
-<div class="flex justify-between items-center mb-6 pt-4 border-t border-outline-variant/20">
-<span class="font-headline text-headline-md text-on-surface">Total :</span>
-<span class="font-headline text-headline-md text-primary font-bold">850.00 €</span>
+
+<div class="mb-6 pt-4 border-t border-outline-variant/20 space-y-2">
+<div class="flex justify-between text-sm text-on-surface-variant">
+<span>Sous-total location <span id="subtotalDetail" class="text-xs"></span></span>
+<span id="subtotalValue">850,00 €</span>
 </div>
+<div id="optionsBreakdown" class="space-y-1 text-sm text-on-surface-variant"></div>
+<div class="flex justify-between items-center pt-3 border-t border-outline-variant/10">
+<span class="font-headline text-2xl text-on-surface">Total :</span>
+<span id="totalValue" class="font-headline text-2xl text-primary font-bold">850,00 €</span>
+</div>
+</div>
+
 <div class="space-y-4">
-<a href="checkout.html" class="w-full bg-primary text-on-primary font-headline font-bold text-body-lg py-4 rounded-lg hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex justify-center items-center space-x-2">
+<button id="reserveBtn" class="w-full bg-primary text-on-primary font-headline font-bold text-lg py-4 rounded-lg hover:bg-primary-container transition-colors flex justify-center items-center space-x-2">
 <span class="material-symbols-outlined">event_available</span>
 <span>Réserver maintenant</span>
-</a>
-<a href="checkout.html" class="animate-glow-pulse w-full bg-transparent border border-outline-variant text-on-surface font-headline font-bold text-body-lg py-4 rounded-lg hover:border-primary hover:text-primary transition-colors flex justify-center items-center space-x-2">
+</button>
+<a href="checkout.html" class="animate-glow-pulse w-full bg-transparent border border-outline-variant text-on-surface font-headline font-bold text-lg py-4 rounded-lg hover:border-primary hover:text-primary transition-colors flex justify-center items-center space-x-2">
 <span class="material-symbols-outlined">request_quote</span>
-<span>Faire une demande de devis</span>
+<span>Demander un devis</span>
 </a>
-</div>
-<div class="mt-4 flex justify-center space-x-4 text-on-surface-variant">
-<button class="p-2 border border-outline-variant/30 rounded-full hover:bg-surface hover:text-primary transition-all">
-<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
-</button>
-<button class="p-2 border border-outline-variant/30 rounded-full hover:bg-surface hover:text-primary transition-all">
-<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
-</button>
 </div>
 </div>
 </div>
 </div>
 </main>
-<!-- Accessoires Section -->
+
 <section class="w-full max-w-[1280px] mx-auto px-6 py-12 border-t border-outline-variant/20">
-<h2 class="font-headline text-headline-lg text-on-surface mb-8">Accessoires Complémentaires</h2>
+<h2 class="font-headline text-3xl text-on-surface mb-8">Accessoires Complémentaires</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Product Card 1 -->
 <a href="product.html" class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 flex flex-col hover:border-primary/50 transition-all group">
 <div class="aspect-video bg-surface rounded-lg mb-4 overflow-hidden border border-outline-variant/10 flex items-center justify-center group-hover:border-primary/30 transition-colors">
 <span class="material-symbols-outlined text-outline-variant text-[40px] group-hover:text-primary transition-colors">mic</span>
 </div>
-<h3 class="font-headline text-body-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Microphone Shure SM58</h3>
-<p class="font-body text-body-sm text-on-surface-variant mb-4 flex-grow">Le standard mondial pour le chant, robuste et fiable.</p>
-<span class="w-full py-2 bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-primary border border-primary/20 transition-colors rounded-lg font-label text-label-caps font-bold text-center">
-                Ajouter à la réquisition
-            </span>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Microphone Shure SM58</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 flex-grow">Le standard mondial pour le chant, robuste et fiable.</p>
+<span class="w-full py-2 bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-primary border border-primary/20 transition-colors rounded-lg font-label text-xs uppercase tracking-wider font-bold text-center">Ajouter à la réquisition</span>
 </a>
-<!-- Product Card 2 -->
 <a href="product.html" class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 flex flex-col hover:border-primary/50 transition-all group">
 <div class="aspect-video bg-surface rounded-lg mb-4 overflow-hidden border border-outline-variant/10 flex items-center justify-center group-hover:border-primary/30 transition-colors">
 <span class="material-symbols-outlined text-outline-variant text-[40px] group-hover:text-primary transition-colors">settings_input_component</span>
 </div>
-<h3 class="font-headline text-body-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Pack de Câbles XLR</h3>
-<p class="font-body text-body-sm text-on-surface-variant mb-4 flex-grow">Lot de 3 câbles XLR haute qualité de 10m.</p>
-<span class="w-full py-2 bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-primary border border-primary/20 transition-colors rounded-lg font-label text-label-caps font-bold text-center">
-                Ajouter à la réquisition
-            </span>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Pack de Câbles XLR</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 flex-grow">Lot de 3 câbles XLR haute qualité de 10m.</p>
+<span class="w-full py-2 bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-primary border border-primary/20 transition-colors rounded-lg font-label text-xs uppercase tracking-wider font-bold text-center">Ajouter à la réquisition</span>
 </a>
-<!-- Product Card 3 -->
 <a href="product.html" class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 flex flex-col hover:border-primary/50 transition-all group">
 <div class="aspect-video bg-surface rounded-lg mb-4 overflow-hidden border border-outline-variant/10 flex items-center justify-center group-hover:border-primary/30 transition-colors">
 <span class="material-symbols-outlined text-outline-variant text-[40px] group-hover:text-primary transition-colors">vertical_align_bottom</span>
 </div>
-<h3 class="font-headline text-body-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Pied d'Enceinte Additionnel</h3>
-<p class="font-body text-body-sm text-on-surface-variant mb-4 flex-grow">Support robuste avec système de sécurité.</p>
-<span class="w-full py-2 bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-primary border border-primary/20 transition-colors rounded-lg font-label text-label-caps font-bold text-center">
-                Ajouter à la réquisition
-            </span>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Pied d'Enceinte Additionnel</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 flex-grow">Support robuste avec système de sécurité.</p>
+<span class="w-full py-2 bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-primary border border-primary/20 transition-colors rounded-lg font-label text-xs uppercase tracking-wider font-bold text-center">Ajouter à la réquisition</span>
 </a>
 </div>
 </section>
-<!-- Footer Component -->
+
 <footer class="w-full py-16 px-10 flex flex-col md:flex-row justify-between items-start gap-8 max-w-[1280px] mx-auto bg-surface-container-lowest border-t border-outline-variant/20 mt-12">
 <div class="flex flex-col space-y-4">
-<div class="font-headline text-body-md font-bold text-on-surface">© 2026 RentSoundSystem.com. Solutions Audio Professionnelles.</div>
-<div class="flex space-x-4 text-on-surface-variant">
-<!-- LinkedIn -->
-<a class="hover:text-primary transition-colors" href="#">
-<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-</a>
-<!-- Instagram -->
-<a class="hover:text-primary transition-colors" href="#">
-<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-</a>
-<!-- YouTube -->
-<a class="hover:text-primary transition-colors" href="#">
-<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-</a>
+<div class="font-headline text-base font-bold text-on-surface">© 2026 RentSoundSystem.com. Solutions Audio Professionnelles.</div>
 </div>
-</div>
-<div class="flex flex-wrap gap-6 font-body text-body-sm text-on-surface-variant">
-<a class="hover:text-primary transition-colors focus:underline" href="#">Spécifications techniques</a>
-<a class="hover:text-primary transition-colors focus:underline" href="#">Politique de livraison</a>
-<a class="hover:text-primary transition-colors focus:underline" href="#">Conditions de location</a>
-<a class="hover:text-primary transition-colors focus:underline" href="#">Assistance</a>
-<a class="hover:text-primary transition-colors focus:underline" href="#">Carrières</a>
-<a class="hover:text-primary transition-colors focus:underline" href="#">Confidentialité</a>
+<div class="flex flex-wrap gap-6 font-body text-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Conditions de location</a>
+<a class="hover:text-primary transition-colors" href="#">Politique de livraison</a>
+<a class="hover:text-primary transition-colors" href="#">Assistance</a>
+<a class="hover:text-primary transition-colors" href="#">Confidentialité</a>
 </div>
 </footer>
-</body></html>
+
+<script>
+const PRICE_PER_DAY = 850;
+const MONTHS_FR = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const state = { quantity: 1, startDate: null, endDate: null, durationDays: 1, options: { delivery: false, install: false } };
+
+const mainImage = document.getElementById('mainImage');
+document.querySelectorAll('.thumb-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const newSrc = btn.dataset.src;
+    if (!newSrc) return;
+    mainImage.src = newSrc;
+    document.querySelectorAll('.thumb-btn').forEach(b => {
+      b.classList.remove('border-2','border-primary','opacity-100');
+      b.classList.add('border','border-outline-variant/30','opacity-60');
+    });
+    btn.classList.remove('border','border-outline-variant/30','opacity-60');
+    btn.classList.add('border-2','border-primary','opacity-100');
+  });
+});
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const t = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.remove('text-primary','border-b-2','border-primary','bg-surface-container-high','font-bold');
+      b.classList.add('text-on-surface-variant','font-semibold');
+    });
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+    btn.classList.add('text-primary','border-b-2','border-primary','bg-surface-container-high','font-bold');
+    btn.classList.remove('text-on-surface-variant','font-semibold');
+    document.getElementById('tab-' + t).classList.remove('hidden');
+  });
+});
+
+const qtyValue = document.getElementById('qtyValue');
+document.getElementById('qtyMinus').addEventListener('click', () => { if (state.quantity > 1) { state.quantity--; qtyValue.textContent = state.quantity; updateTotal(); } });
+document.getElementById('qtyPlus').addEventListener('click', () => { if (state.quantity < 99) { state.quantity++; qtyValue.textContent = state.quantity; updateTotal(); } });
+
+const todayStr = new Date().toISOString().split('T')[0];
+const startInput = document.getElementById('startDate');
+const endInput = document.getElementById('endDate');
+startInput.min = todayStr;
+endInput.min = todayStr;
+
+function calcDuration() {
+  if (!state.startDate || !state.endDate) {
+    state.durationDays = 1;
+    document.getElementById('durationDisplay').classList.add('hidden');
+    return;
+  }
+  const d = Math.ceil((new Date(state.endDate) - new Date(state.startDate)) / 86400000);
+  if (d < 1) {
+    state.durationDays = 1;
+    document.getElementById('dateError').textContent = 'La date de fin doit être après la date de début.';
+    document.getElementById('dateError').classList.remove('hidden');
+    document.getElementById('durationDisplay').classList.add('hidden');
+  } else {
+    state.durationDays = d;
+    document.getElementById('dateError').classList.add('hidden');
+    document.getElementById('durationDays').textContent = d;
+    document.getElementById('durationDisplay').classList.remove('hidden');
+  }
+}
+startInput.addEventListener('change', e => { state.startDate = e.target.value; endInput.min = e.target.value; calcDuration(); updateTotal(); renderCal(); });
+endInput.addEventListener('change', e => { state.endDate = e.target.value; calcDuration(); updateTotal(); renderCal(); });
+
+document.getElementById('optDelivery').addEventListener('change', e => { state.options.delivery = e.target.checked; updateTotal(); });
+document.getElementById('optInstall').addEventListener('change', e => { state.options.install = e.target.checked; updateTotal(); });
+
+function formatPrice(n) { return n.toFixed(2).replace('.', ',') + ' €'; }
+
+function updateTotal() {
+  const sub = PRICE_PER_DAY * state.quantity * state.durationDays;
+  let opt = 0; const br = [];
+  if (state.options.delivery) { opt += 50; br.push({n:'Livraison', p:50}); }
+  if (state.options.install) { opt += 150; br.push({n:'Installation technique', p:150}); }
+  document.getElementById('subtotalValue').textContent = formatPrice(sub);
+  document.getElementById('subtotalDetail').textContent = '(' + state.quantity + ' × ' + state.durationDays + ' jour' + (state.durationDays > 1 ? 's' : '') + ')';
+  document.getElementById('optionsBreakdown').innerHTML = br.map(o => '<div class="flex justify-between"><span>' + o.n + '</span><span>+' + formatPrice(o.p) + '</span></div>').join('');
+  document.getElementById('totalValue').textContent = formatPrice(sub + opt);
+}
+
+let calDate = new Date();
+function renderCal() {
+  const y = calDate.getFullYear(), m = calDate.getMonth();
+  document.getElementById('monthLabel').textContent = MONTHS_FR[m] + ' ' + y;
+  const fd = new Date(y, m, 1).getDay();
+  const dim = new Date(y, m + 1, 0).getDate();
+  const grid = document.getElementById('calendarGrid');
+  grid.innerHTML = '';
+  for (let i = 0; i < fd; i++) grid.innerHTML += '<div class="py-2 opacity-30"></div>';
+  const sd = state.startDate ? new Date(state.startDate) : null;
+  const ed = state.endDate ? new Date(state.endDate) : null;
+  for (let d = 1; d <= dim; d++) {
+    const c = new Date(y, m, d);
+    const inR = sd && ed && c >= sd && c <= ed;
+    const bd = (sd && c.getTime() === sd.getTime()) || (ed && c.getTime() === ed.getTime());
+    let cls = 'py-2 border rounded transition-colors';
+    if (bd) cls += ' bg-primary text-on-primary font-bold border-primary';
+    else if (inR) cls += ' bg-primary/30 text-on-surface border-primary/50';
+    else cls += ' border-outline-variant/10 text-on-surface-variant';
+    grid.innerHTML += '<div class="' + cls + '">' + d + '</div>';
+  }
+}
+document.getElementById('prevMonth').addEventListener('click', () => { calDate.setMonth(calDate.getMonth() - 1); renderCal(); });
+document.getElementById('nextMonth').addEventListener('click', () => { calDate.setMonth(calDate.getMonth() + 1); renderCal(); });
+
+document.getElementById('reserveBtn').addEventListener('click', () => {
+  if (!state.startDate || !state.endDate) {
+    document.getElementById('dateError').textContent = 'Veuillez sélectionner les dates de location.';
+    document.getElementById('dateError').classList.remove('hidden');
+    startInput.focus();
+    return;
+  }
+  try {
+    sessionStorage.setItem('rss_booking', JSON.stringify({
+      productId: 'funktion-one-agadir',
+      productName: 'Système Sonore Funktion-One - Agadir',
+      pricePerDay: PRICE_PER_DAY,
+      quantity: state.quantity,
+      startDate: state.startDate,
+      endDate: state.endDate,
+      durationDays: state.durationDays,
+      options: state.options,
+      total: document.getElementById('totalValue').textContent
+    }));
+  } catch (e) {}
+  window.location.href = 'checkout.html';
+});
+
+renderCal(); updateTotal();
+</script>
+</body>
+</html>
