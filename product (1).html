@@ -404,5 +404,20 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="supabase.js"></script>
+
+<script>
+async function testSupabase() {
+
+  const { data, error } = await supabase
+    .from('products')
+    .select('*')
+
+  console.log(data)
+  console.log(error)
+
+}
+
+testSupabase()
+</script>
 </body>
 </html>
